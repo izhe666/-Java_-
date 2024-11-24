@@ -1,0 +1,181 @@
+USE  industy_ruoyi;
+
+-- 第一条数据
+INSERT INTO CS22Record (
+    id, jcdwmc, jlbh, gcmc, htd, sgdw, jldw, gcbwyt, ypxx, syjcrq, sytj_wd, sytj_sd,
+    csyj, pdyj, zyyjsbmcjbh, sbhntxnphb, dld_A1, dld_A2, kzd_B1, kzd_B2, tbhw_gd,
+    tbhw_hsqk, tbhw_njx, tbhw_bsx, bz, sjb_C, t_tzl_D1, t_tzl_D2, t_zl_E1, t_zl_E2,
+    t_rj_G1, t_rj_G2, bjmdjsz_p, phjjzxs_sigma, sbpb_1, sbpb_2, jjsjb, sjjsff, jdmd,
+    sjb_I1, sjb_I2, sn_J1, sn_J2, xjl_K1, xjl_K2, cjl_L1, cjl_L2, s_M1, s_M2,
+    wjj_mc1, wjjzlmc1_N1, wjjzlmc1_N2, wjj_mc2, wjjzlmc2_O1, wjjzlmc2_O2, kwchl_mc1,
+    kwchlmc1_P1, kwchlmc1_P2, kwchl_mc2, kwchlmc2_Q1, kwchlmc2_Q2, sl_R1, sl_R2
+) VALUES (
+    12, 'Unit A', 'JL20230111', 'Project Alpha', 'Contract C', 'Builder X',
+    'Supervisor Y', 'Usage Alpha', 'Sample Info 1', '2024-11-08 14:00:00', 21, 58,
+    'Standard A', 'Criteria A', 'Equip X123', 'Concrete Perf A', 10, 14, 17, 16,
+    'Good', 'Sand Clear', 'Sticky', 'Moderate', 'None', 0.46, 50.5, 54.0, 10.5, 11.5,
+    5.8, 6.2, 2350, 1.8, 'Mix C', 'Mix D', 0.62, 'Method B', 2380, 0.51, 0.53, 305.0,
+    320.0, 515.0, 525.0, 710.0, 715.0, 190.0, 200.0, 'Additive X', 2.3, 2.6,
+    'Additive Y', 1.2, 4.5, 'Mineral X', 5.5, 6.8, 'Mineral Y', 5.6, 6.9, 50.0, 48.7
+);
+
+-- 第二条数据
+INSERT INTO CS22Record (
+    id, jcdwmc, jlbh, gcmc, htd, sgdw, jldw, gcbwyt, ypxx, syjcrq, sytj_wd, sytj_sd,
+    csyj, pdyj, zyyjsbmcjbh, sbhntxnphb, dld_A1, dld_A2, kzd_B1, kzd_B2, tbhw_gd,
+    tbhw_hsqk, tbhw_njx, tbhw_bsx, bz, sjb_C, t_tzl_D1, t_tzl_D2, t_zl_E1, t_zl_E2,
+    t_rj_G1, t_rj_G2, bjmdjsz_p, phjjzxs_sigma, sbpb_1, sbpb_2, jjsjb, sjjsff, jdmd,
+    sjb_I1, sjb_I2, sn_J1, sn_J2, xjl_K1, xjl_K2, cjl_L1, cjl_L2, s_M1, s_M2,
+    wjj_mc1, wjjzlmc1_N1, wjjzlmc1_N2, wjj_mc2, wjjzlmc2_O1, wjjzlmc2_O2, kwchl_mc1,
+    kwchlmc1_P1, kwchlmc1_P2, kwchl_mc2, kwchlmc2_Q1, kwchlmc2_Q2, sl_R1, sl_R2
+) VALUES (
+    13, 'Unit B', 'JL20230112', 'Project Beta', 'Contract D', 'Builder Y',
+    'Supervisor Z', 'Usage Beta', 'Sample Info 2', '2024-11-09 10:30:00', 24, 60,
+    'Standard B', 'Criteria B', 'Equip Y234', 'Concrete Perf B', 12, 15, 19, 18,
+    'Fair', 'Sand Moderate', 'Moderate', 'Low', 'Remark 2', 0.55, 52.0, 56.0, 11.2,
+    12.1, 6.2, 6.8, 2385, 2.0, 'Mix E', 'Mix F', 0.58, 'Method C', 2400, 0.45,
+    0.48, 315.0, 325.0, 505.0, 540.0, 725.0, 730.0, 175.0, 185.0, 'Additive Z',
+    1.8, 2.1, 'Additive W', 1.3, 3.8, 'Mineral W', 4.5, 5.2, 'Mineral Z', 4.8,
+    5.5, 46.5, 49.9
+);
+
+INSERT INTO CS22Record (
+    id, jcdwmc, jlbh, gcmc, htd, sgdw, jldw, gcbwyt, ypxx, syjcrq, sytj_wd, sytj_sd,
+    csyj, pdyj, zyyjsbmcjbh, sbhntxnphb, dld_A1, dld_A2, kzd_B1, kzd_B2, tbhw_gd,
+    tbhw_hsqk, tbhw_njx, tbhw_bsx, bz, sjb_C, t_tzl_D1, t_tzl_D2, t_zl_E1, t_zl_E2,
+    t_rj_G1, t_rj_G2, bjmdjsz_p, phjjzxs_sigma, sbpb_1, sbpb_2, jjsjb, sjjsff, jdmd,
+    sjb_I1, sjb_I2, sn_J1, sn_J2, xjl_K1, xjl_K2, cjl_L1, cjl_L2, s_M1, s_M2,
+    wjj_mc1, wjjzlmc1_N1, wjjzlmc1_N2, wjj_mc2, wjjzlmc2_O1, wjjzlmc2_O2, kwchl_mc1,
+    kwchlmc1_P1, kwchlmc1_P2, kwchl_mc2, kwchlmc2_Q1, kwchlmc2_Q2, sl_R1, sl_R2
+) VALUES (
+    14, 'Unit D', 'JL20230114', 'Project Delta', 'Contract F', 'Builder W',
+    'Supervisor V', 'Usage Delta', 'Sample Info 4', '2024-11-11 15:20:00', 23, 62,
+    'Standard D', 'Criteria D', 'Equip W456', 'Concrete Perf D', 15, 18, 20, 19,
+    'Good', 'Sand Minimal', 'Very Sticky', 'High', 'Remark 4', 0.65, 55.0, 60.0,
+    11.8, 12.8, 6.9, 7.2, 2360, 1.9, 'Mix I', 'Mix J', 0.61, 'Method E', 2390,
+    0.49, 0.50, 320.0, 330.0, 510.0, 520.0, 735.0, 745.0, 195.0, 205.0, 'Additive S',
+    2.1, 2.7, 'Additive R', 1.7, 4.2, 'Mineral R', 6.0, 6.8, 'Mineral S', 5.7,
+    6.2, 50.1, 52.5
+);
+
+
+INSERT INTO CS22Record (
+    id, jcdwmc, jlbh, gcmc, htd, sgdw, jldw, gcbwyt, ypxx, syjcrq, sytj_wd, sytj_sd,
+    csyj, pdyj, zyyjsbmcjbh, sbhntxnphb, dld_A1, dld_A2, kzd_B1, kzd_B2, tbhw_gd,
+    tbhw_hsqk, tbhw_njx, tbhw_bsx, bz, sjb_C, t_tzl_D1, t_tzl_D2, t_zl_E1, t_zl_E2,
+    t_rj_G1, t_rj_G2, bjmdjsz_p, phjjzxs_sigma, sbpb_1, sbpb_2, jjsjb, sjjsff, jdmd,
+    sjb_I1, sjb_I2, sn_J1, sn_J2, xjl_K1, xjl_K2, cjl_L1, cjl_L2, s_M1, s_M2,
+    wjj_mc1, wjjzlmc1_N1, wjjzlmc1_N2, wjj_mc2, wjjzlmc2_O1, wjjzlmc2_O2, kwchl_mc1,
+    kwchlmc1_P1, kwchlmc1_P2, kwchl_mc2, kwchlmc2_Q1, kwchlmc2_Q2, sl_R1, sl_R2
+)  VALUES (
+    15, 'Unit E', 'JL20230115', 'Project Epsilon', 'Contract G', 'Builder Q',
+    'Supervisor R', 'Usage Epsilon', 'Sample Info 5', '2024-11-12 16:45:00', 25, 63,
+    'Standard E', 'Criteria E', 'Equip Q567', 'Concrete Perf E', 16, 20, 21, 22,
+    'Fair', 'Sand Moderate', 'Moderate', 'Low', 'Remark 5', 0.59, 57.0, 61.0,
+    12.2, 13.0, 7.0, 7.5, 2375, 2.2, 'Mix K', 'Mix L', 0.55, 'Method F', 2410,
+    0.52, 0.56, 325.0, 335.0, 520.0, 545.0, 740.0, 750.0, 205.0, 215.0, 'Additive Q',
+    2.6, 3.1, 'Additive P', 1.8, 4.7, 'Mineral Q', 6.3, 7.3, 'Mineral P', 5.9,
+    7.4, 52.0, 53.8
+);
+
+
+INSERT INTO CS22Record (
+    id, jcdwmc, jlbh, gcmc, htd, sgdw, jldw, gcbwyt, ypxx, syjcrq, sytj_wd, sytj_sd,
+    csyj, pdyj, zyyjsbmcjbh, sbhntxnphb, dld_A1, dld_A2, kzd_B1, kzd_B2, tbhw_gd,
+    tbhw_hsqk, tbhw_njx, tbhw_bsx, bz, sjb_C, t_tzl_D1, t_tzl_D2, t_zl_E1, t_zl_E2,
+    t_rj_G1, t_rj_G2, bjmdjsz_p, phjjzxs_sigma, sbpb_1, sbpb_2, jjsjb, sjjsff, jdmd,
+    sjb_I1, sjb_I2, sn_J1, sn_J2, xjl_K1, xjl_K2, cjl_L1, cjl_L2, s_M1, s_M2,
+    wjj_mc1, wjjzlmc1_N1, wjjzlmc1_N2, wjj_mc2, wjjzlmc2_O1, wjjzlmc2_O2, kwchl_mc1,
+    kwchlmc1_P1, kwchlmc1_P2, kwchl_mc2, kwchlmc2_Q1, kwchlmc2_Q2, sl_R1, sl_R2
+) VALUES (
+    16, 'Unit F', 'JL20230116', 'Project Zeta', 'Contract H', 'Builder P',
+    'Supervisor O', 'Usage Zeta', 'Sample Info 6', '2024-11-13 09:00:00', 20, 57,
+    'Standard F', 'Criteria F', 'Equip P678', 'Concrete Perf F', 17, 19, 23, 22,
+    'Good', 'Sand High', 'Sticky', 'Very High', 'Remark 6', 0.48, 53.0, 57.0,
+    12.5, 13.2, 6.6, 7.1, 2388, 1.7, 'Mix M', 'Mix N', 0.57, 'Method G', 2430,
+    0.50, 0.54, 330.0, 340.0, 525.0, 550.0, 750.0, 760.0, 215.0, 225.0, 'Additive N',
+    2.2, 3.0, 'Additive M', 1.6, 3.9, 'Mineral M', 5.4, 6.0, 'Mineral N', 5.8,
+    7.0, 48.5, 50.2
+);
+
+
+INSERT INTO CS22Record (
+    id, jcdwmc, jlbh, gcmc, htd, sgdw, jldw, gcbwyt, ypxx, syjcrq, sytj_wd, sytj_sd,
+    csyj, pdyj, zyyjsbmcjbh, sbhntxnphb, dld_A1, dld_A2, kzd_B1, kzd_B2, tbhw_gd,
+    tbhw_hsqk, tbhw_njx, tbhw_bsx, bz, sjb_C, t_tzl_D1, t_tzl_D2, t_zl_E1, t_zl_E2,
+    t_rj_G1, t_rj_G2, bjmdjsz_p, phjjzxs_sigma, sbpb_1, sbpb_2, jjsjb, sjjsff, jdmd,
+    sjb_I1, sjb_I2, sn_J1, sn_J2, xjl_K1, xjl_K2, cjl_L1, cjl_L2, s_M1, s_M2,
+    wjj_mc1, wjjzlmc1_N1, wjjzlmc1_N2, wjj_mc2, wjjzlmc2_O1, wjjzlmc2_O2, kwchl_mc1,
+    kwchlmc1_P1, kwchlmc1_P2, kwchl_mc2, kwchlmc2_Q1, kwchlmc2_Q2, sl_R1, sl_R2
+)  VALUES (
+    17, 'Unit G', 'JL20230117', 'Project Eta', 'Contract I', 'Builder N',
+    'Supervisor M', 'Usage Eta', 'Sample Info 7', '2024-11-14 11:30:00', 26, 64,
+    'Standard G', 'Criteria G', 'Equip M789', 'Concrete Perf G', 18, 21, 24, 23,
+    'Excellent', 'Sand Minimal', 'Moderate', 'High', 'Remark 7', 0.53, 56.0, 60.5,
+    11.9, 13.1, 6.4, 6.9, 2405, 2.1, 'Mix O', 'Mix P', 0.60, 'Method H', 2440,
+    0.51, 0.55, 335.0, 345.0, 530.0, 560.0, 755.0, 765.0, 200.0, 210.0, 'Additive L',
+    2.8, 3.5, 'Additive K', 2.0, 4.8, 'Mineral K', 5.7, 6.9, 'Mineral L', 6.2,
+    7.4, 53.1, 54.9
+);
+
+INSERT INTO CS22Record (
+    id, jcdwmc, jlbh, gcmc, htd, sgdw, jldw, gcbwyt, ypxx, syjcrq, sytj_wd, sytj_sd,
+    csyj, pdyj, zyyjsbmcjbh, sbhntxnphb, dld_A1, dld_A2, kzd_B1, kzd_B2, tbhw_gd,
+    tbhw_hsqk, tbhw_njx, tbhw_bsx, bz, sjb_C, t_tzl_D1, t_tzl_D2, t_zl_E1, t_zl_E2,
+    t_rj_G1, t_rj_G2, bjmdjsz_p, phjjzxs_sigma, sbpb_1, sbpb_2, jjsjb, sjjsff, jdmd,
+    sjb_I1, sjb_I2, sn_J1, sn_J2, xjl_K1, xjl_K2, cjl_L1, cjl_L2, s_M1, s_M2,
+    wjj_mc1, wjjzlmc1_N1, wjjzlmc1_N2, wjj_mc2, wjjzlmc2_O1, wjjzlmc2_O2, kwchl_mc1,
+    kwchlmc1_P1, kwchlmc1_P2, kwchl_mc2, kwchlmc2_Q1, kwchlmc2_Q2, sl_R1, sl_R2
+) VALUES (
+    18, 'Unit H', 'JL20230118', 'Project Theta', 'Contract J', 'Builder L',
+    'Supervisor K', 'Usage Theta', 'Sample Info 8', '2024-11-15 14:15:00', 28, 66,
+    'Standard H', 'Criteria H', 'Equip K890', 'Concrete Perf H', 19, 22, 25, 24,
+    'Good', 'Sand Sparse', 'Sticky', 'Very Low', 'Remark 8', 0.63, 58.0, 62.0,
+    12.8, 13.8, 7.3, 7.7, 2399, 2.3, 'Mix Q', 'Mix R', 0.61, 'Method I', 2450,
+    0.52, 0.56, 340.0, 350.0, 535.0, 570.0, 760.0, 770.0, 220.0, 230.0, 'Additive J',
+    2.7, 3.3, 'Additive I', 2.1, 4.6, 'Mineral I', 6.2, 7.2, 'Mineral J', 6.5,
+    7.5, 54.3, 55.7
+);
+
+
+
+INSERT INTO CS22Record (
+    id, jcdwmc, jlbh, gcmc, htd, sgdw, jldw, gcbwyt, ypxx, syjcrq, sytj_wd, sytj_sd,
+    csyj, pdyj, zyyjsbmcjbh, sbhntxnphb, dld_A1, dld_A2, kzd_B1, kzd_B2, tbhw_gd,
+    tbhw_hsqk, tbhw_njx, tbhw_bsx, bz, sjb_C, t_tzl_D1, t_tzl_D2, t_zl_E1, t_zl_E2,
+    t_rj_G1, t_rj_G2, bjmdjsz_p, phjjzxs_sigma, sbpb_1, sbpb_2, jjsjb, sjjsff, jdmd,
+    sjb_I1, sjb_I2, sn_J1, sn_J2, xjl_K1, xjl_K2, cjl_L1, cjl_L2, s_M1, s_M2,
+    wjj_mc1, wjjzlmc1_N1, wjjzlmc1_N2, wjj_mc2, wjjzlmc2_O1, wjjzlmc2_O2, kwchl_mc1,
+    kwchlmc1_P1, kwchlmc1_P2, kwchl_mc2, kwchlmc2_Q1, kwchlmc2_Q2, sl_R1, sl_R2
+) VALUES (
+    19, 'Unit I', 'JL20230119', 'Project Iota', 'Contract K', 'Builder J',
+    'Supervisor H', 'Usage Iota', 'Sample Info 9', '2024-11-16 13:45:00', 29, 67,
+    'Standard I', 'Criteria I', 'Equip J901', 'Concrete Perf I', 20, 23, 26, 25,
+    'Excellent', 'Sand Present', 'Moderate', 'High', 'Remark 9', 0.49, 59.0, 63.0,
+    12.7, 13.9, 7.2, 7.8, 2415, 1.5, 'Mix S', 'Mix T', 0.64, 'Method J', 2470,
+    0.48, 0.50, 345.0, 355.0, 540.0, 575.0, 770.0, 780.0, 230.0, 240.0, 'Additive H',
+    2.9, 3.7, 'Additive G', 2.2, 5.0, 'Mineral G', 6.6, 7.5, 'Mineral H', 6.8,
+    7.8, 55.0, 56.5
+);
+
+
+
+INSERT INTO CS22Record (
+    id, jcdwmc, jlbh, gcmc, htd, sgdw, jldw, gcbwyt, ypxx, syjcrq, sytj_wd, sytj_sd,
+    csyj, pdyj, zyyjsbmcjbh, sbhntxnphb, dld_A1, dld_A2, kzd_B1, kzd_B2, tbhw_gd,
+    tbhw_hsqk, tbhw_njx, tbhw_bsx, bz, sjb_C, t_tzl_D1, t_tzl_D2, t_zl_E1, t_zl_E2,
+    t_rj_G1, t_rj_G2, bjmdjsz_p, phjjzxs_sigma, sbpb_1, sbpb_2, jjsjb, sjjsff, jdmd,
+    sjb_I1, sjb_I2, sn_J1, sn_J2, xjl_K1, xjl_K2, cjl_L1, cjl_L2, s_M1, s_M2,
+    wjj_mc1, wjjzlmc1_N1, wjjzlmc1_N2, wjj_mc2, wjjzlmc2_O1, wjjzlmc2_O2, kwchl_mc1,
+    kwchlmc1_P1, kwchlmc1_P2, kwchl_mc2, kwchlmc2_Q1, kwchlmc2_Q2, sl_R1, sl_R2
+) VALUES (
+    20, 'Unit J', 'JL20230120', 'Project Kappa', 'Contract L', 'Builder H',
+    'Supervisor F', 'Usage Kappa', 'Sample Info 10', '2024-11-17 15:10:00', 27, 65,
+    'Standard J', 'Criteria J', 'Equip F012', 'Concrete Perf J', 21, 24, 27, 26,
+    'Fair', 'Sand Moderate', 'Sticky', 'Moderate', 'Remark 10', 0.56, 60.0, 64.0,
+    13.0, 14.0, 7.4, 7.9, 2430, 2.6, 'Mix U', 'Mix V', 0.59, 'Method K', 2480,
+    0.53, 0.57, 350.0, 360.0, 545.0, 580.0, 775.0, 785.0, 225.0, 235.0, 'Additive F',
+    3.0, 3.6, 'Additive E', 2.5, 5.2, 'Mineral E', 6.7, 7.6, 'Mineral F', 6.9,
+    7.7, 55.8, 57.2
+);
+
