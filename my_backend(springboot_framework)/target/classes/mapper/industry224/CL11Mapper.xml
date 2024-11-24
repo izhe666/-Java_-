@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.CL11Mapper">
+	<!-- 设置查询之后返回的结果集
+	 column 表示数据库字段名 property 实体属性名 -->
+    <resultMap type="CL11" id="CL11Result">
+		<id     property="id"           column="id"           />
+		<result property="jcdwmc"       column="jcdwmc"       />
+		<result property="jlbh"         column="jlbh"         />
+		<result property="gcmc"         column="gcmc"         />
+		<result property="htd"          column="htd"          />
+		<result property="sgdw"         column="sgdw"         />
+		<result property="jldw"         column="jldw"         />
+		<result property="gcbw"         column="gcbw"         />
+		<result property="ypxx"         column="ypxx"         />
+		<result property="syjcrq"       column="syjcrq"       />
+		<result property="sytj"         column="sytj"         />
+		<result property="wd"           column="wd"           />
+		<result property="xdsd"         column="xdsd"         />
+		<result property="jcyj"         column="jcyj"         />
+		<result property="pdyj"         column="pdyj"         />
+		<result property="zyyqsbmchbh"  column="zyyqsbmchbh"  />
+		<result property="lqzl"         column="lqzl"         />
+		<result property="lqbh"         column="lqbh"         />
+		<result property="sccj"         column="sccj"         />
+		<result property="scrq"         column="scrq"         />
+		<result property="ph"           column="ph"           />
+		<result property="sycs"         column="sycs"         />
+		<result property="cswd1"        column="cswd1"        />
+		<result property="cswd2"        column="cswd2"        />
+		<result property="a1"           column="a1"           />
+		<result property="a2"           column="a2"           />
+		<result property="a3"           column="a3"           />
+		<result property="a4"           column="a4"           />
+		<result property="a5"           column="a5"           />
+		<result property="a6"           column="a6"           />
+		<result property="a7"           column="a7"           />
+		<result property="a8"           column="a8"           />
+		<result property="a9"           column="a9"           />
+		<result property="a10"          column="a10"          />
+		<result property="a11"          column="a11"          />
+		<result property="a12"          column="a12"          />
+		<result property="a13"          column="a13"          />
+		<result property="a14"          column="a14"          />
+		<result property="b1"           column="b1"           />
+		<result property="b2"           column="b2"           />
+		<result property="b3"           column="b3"           />
+		<result property="b4"           column="b4"           />
+		<result property="b5"           column="b5"           />
+		<result property="b6"           column="b6"           />
+		<result property="b7"           column="b7"           />
+		<result property="b8"           column="b8"           />
+		<result property="b9"           column="b9"           />
+		<result property="b10"          column="b10"          />
+		<result property="b11"          column="b11"          />
+		<result property="b12"          column="b12"          />
+		<result property="b13"          column="b13"          />
+		<result property="b14"          column="b14"          />
+		<result property="dqyq"         column="dqyq"         />
+		<result property="qyxzz"        column="qyxzz"        />
+		<result property="sdcz1"        column="sdcz1"        />
+		<result property="sdcz2"        column="sdcz2"        />
+		<result property="sdpjz"        column="sdpjz"        />
+		<result property="sdxcz"        column="sdxcz"        />
+		<result property="rdcz1"        column="rdcz1"        />
+		<result property="rdcz2"        column="rdcz2"        />
+		<result property="rdpjz"        column="rdpjz"        />
+		<result property="rdxcz"        column="rdxcz"        />
+		<result property="fjsm"         column="fjsm"         />
+		<result property="position"     column="position"     />
+		<result property="userid"       column="userid"       />
+	</resultMap>
+
+	<!-- parameterType 传递的参数类型   resultMap 查询返回的结果集
+	resultType="com.ruoyi.commom.core.domain.class224.CL11"-->
+    <select id="selectCL11List" parameterType="CL11"
+			resultMap="CL11Result">
+		select * from cl11
+		where 1 = 1
+		<if test="jcdwmc != null and jcdwmc != ''">
+			AND jcdwmc = #{jcdwmc}
+		</if>
+		<!-- 模糊查询 -->
+		<if test="jlbh != null and jlbh != ''">
+			AND jlbh like concat('%', #{jlbh}, '%')
+		</if>
+		<!-- 如果字段是int float   字段!= 0  -->
+		<if test="id != null and id != 0">
+			AND id like concat('%', #{id}, '%')
+		</if>
+		<!-- 如果字段是日期  没有 and 后端这段 -->
+		<if test="syjcrq != null">
+			AND syjcrq like concat('%', #{syjcrq}, '%')
+		</if>
+		<!-- 数据范围过滤 -->
+		${params.dataScope}
+	</select>
+
+	<select id="selectCL11ById" parameterType="Long"
+			resultMap="CL11Result">
+	    select * from cl11 where id = #{id}
+	</select>
+
+	<insert id="insertCL11" parameterType="CL11"
+			useGeneratedKeys="true"
+			keyProperty="id">
+        insert into cl11(
+        <if test="jcdwmc != null and jcdwmc != ''">jcdwmc,</if>
+        <if test="jlbh != null and jlbh != ''">jlbh,</if>
+        <if test="gcmc != null and gcmc != ''">gcmc,</if>
+        <if test="htd != null and htd != ''">htd,</if>
+        <if test="sgdw != null and sgdw != ''">sgdw,</if>
+        <if test="jldw != null and jldw != ''">jldw,</if>
+        <if test="gcbw != null and gcbw != ''">gcbw,</if>
+        <if test="ypxx != null and ypxx != ''">ypxx,</if>
+        <if test="syjcrq != null">syjcrq,</if>
+        <if test="sytj != null and sytj != ''">sytj,</if>
+        <if test="wd != null and wd != ''">wd,</if>
+        <if test="xdsd != null and xdsd != ''">xdsd,</if>
+        <if test="jcyj != null and jcyj != ''">jcyj,</if>
+        <if test="pdyj != null and pdyj != ''">pdyj,</if>
+        <if test="zyyqsbmchbh != null and zyyqsbmchbh != ''">zyyqsbmchbh,</if>
+        <if test="lqzl != null and lqzl != ''">lqzl,</if>
+        <if test="lqbh != null and lqbh != ''">lqbh,</if>
+        <if test="sccj != null and sccj != ''">sccj,</if>
+        <if test="scrq != null">scrq,</if>
+        <if test="ph != null and ph != ''">ph,</if>
+        <if test="sycs != null and sycs != ''">sycs,</if>
+        <if test="cswd1 != null">cswd1,</if>
+        <if test="cswd2 != null">cswd2,</if>
+        <if test="a1 != null">a1,</if>
+        <if test="a2 != null">a2,</if>
+        <if test="a3 != null">a3,</if>
+        <if test="a4 != null">a4,</if>
+        <if test="a5 != null">a5,</if>
+        <if test="a6 != null">a6,</if>
+        <if test="a7 != null">a7,</if>
+        <if test="a8 != null">a8,</if>
+        <if test="a9 != null">a9,</if>
+        <if test="a10 != null">a10,</if>
+        <if test="a11 != null">a11,</if>
+        <if test="a12 != null">a12,</if>
+        <if test="a13 != null">a13,</if>
+        <if test="a14 != null">a14,</if>
+        <if test="b1 != null">b1,</if>
+        <if test="b2 != null">b2,</if>
+        <if test="b3 != null">b3,</if>
+        <if test="b4 != null">b4,</if>
+        <if test="b5 != null">b5,</if>
+        <if test="b6 != null">b6,</if>
+        <if test="b7 != null">b7,</if>
+        <if test="b8 != null">b8,</if>
+        <if test="b9 != null">b9,</if>
+        <if test="b10 != null">b10,</if>
+        <if test="b11 != null">b11,</if>
+        <if test="b12 != null">b12,</if>
+        <if test="b13 != null">b13,</if>
+        <if test="b14 != null">b14,</if>
+        <if test="dqyq != null">dqyq,</if>
+        <if test="qyxzz != null">qyxzz,</if>
+        <if test="sdcz1 != null">sdcz1,</if>
+        <if test="sdcz2 != null">sdcz2,</if>
+        <if test="sdpjz != null">sdpjz,</if>
+        <if test="sdxcz != null">sdxcz,</if>
+        <if test="rdcz1 != null">rdcz1,</if>
+        <if test="rdcz2 != null">rdcz2,</if>
+        <if test="rdpjz != null">rdpjz,</if>
+        <if test="rdxcz != null">rdxcz,</if>
+        <if test="fjsm != null and fjsm != ''">fjsm,</if>
+        <if test="position != null and position != ''">position,</if>
+        <if test="userid != null and userid != ''">userid,</if>
+        id
+        )values(
+        <if test="jcdwmc != null and jcdwmc != ''">#{jcdwmc},</if>
+        <if test="jlbh != null and jlbh != ''">#{jlbh},</if>
+        <if test="gcmc != null and gcmc != ''">#{gcmc},</if>
+        <if test="htd != null and htd != ''">#{htd},</if>
+        <if test="sgdw != null and sgdw != ''">#{sgdw},</if>
+        <if test="jldw != null and jldw != ''">#{jldw},</if>
+        <if test="gcbw != null and gcbw != ''">#{gcbw},</if>
+        <if test="ypxx != null and ypxx != ''">#{ypxx},</if>
+        <if test="syjcrq != null">#{syjcrq},</if>
+        <if test="sytj != null and sytj != ''">#{sytj},</if>
+        <if test="wd != null and wd != ''">#{wd},</if>
+        <if test="xdsd != null and xdsd != ''">#{xdsd},</if>
+        <if test="jcyj != null and jcyj != ''">#{jcyj},</if>
+        <if test="pdyj != null and pdyj != ''">#{pdyj},</if>
+        <if test="zyyqsbmchbh != null and zyyqsbmchbh != ''">#{zyyqsbmchbh},</if>
+        <if test="lqzl != null and lqzl != ''">#{lqzl},</if>
+        <if test="lqbh != null and lqbh != ''">#{lqbh},</if>
+        <if test="sccj != null and sccj != ''">#{sccj},</if>
+        <if test="scrq != null">#{scrq},</if>
+        <if test="ph != null and ph != ''">#{ph},</if>
+        <if test="sycs != null and sycs != ''">#{sycs},</if>
+        <if test="cswd1 != null">#{cswd1},</if>
+        <if test="cswd2 != null">#{cswd2},</if>
+        <if test="a1 != null">#{a1},</if>
+        <if test="a2 != null">#{a2},</if>
+        <if test="a3 != null">#{a3},</if>
+        <if test="a4 != null">#{a4},</if>
+        <if test="a5 != null">#{a5},</if>
+        <if test="a6 != null">#{a6},</if>
+        <if test="a7 != null">#{a7},</if>
+        <if test="a8 != null">#{a8},</if>
+        <if test="a9 != null">#{a9},</if>
+        <if test="a10 != null">#{a10},</if>
+        <if test="a11 != null">#{a11},</if>
+        <if test="a12 != null">#{a12},</if>
+        <if test="a13 != null">#{a13},</if>
+        <if test="a14 != null">#{a14},</if>
+        <if test="b1 != null">#{b1},</if>
+        <if test="b2 != null">#{b2},</if>
+        <if test="b3 != null">#{b3},</if>
+        <if test="b4 != null">#{b4},</if>
+        <if test="b5 != null">#{b5},</if>
+        <if test="b6 != null">#{b6},</if>
+        <if test="b7 != null">#{b7},</if>
+        <if test="b8 != null">#{b8},</if>
+        <if test="b9 != null">#{b9},</if>
+        <if test="b10 != null">#{b10},</if>
+        <if test="b11 != null">#{b11},</if>
+        <if test="b12 != null">#{b12},</if>
+        <if test="b13 != null">#{b13},</if>
+        <if test="b14 != null">#{b14},</if>
+        <if test="dqyq != null">#{dqyq},</if>
+        <if test="qyxzz != null">#{qyxzz},</if>
+        <if test="sdcz1 != null">#{sdcz1},</if>
+        <if test="sdcz2 != null">#{sdcz2},</if>
+        <if test="sdpjz != null">#{sdpjz},</if>
+        <if test="sdxcz != null">#{sdxcz},</if>
+        <if test="rdcz1 != null">#{rdcz1},</if>
+        <if test="rdcz2 != null">#{rdcz2},</if>
+        <if test="rdpjz != null">#{rdpjz},</if>
+        <if test="rdxcz != null">#{rdxcz},</if>
+        <if test="fjsm != null and fjsm != ''">#{fjsm},</if>
+        <if test="position != null and position != ''">#{position},</if>
+        <if test="userid != null and userid != ''">#{userid},</if>
+        null
+        )
+    </insert>
+
+	<update id="updateCL11" parameterType="CL11">
+        update cl11
+        <set>
+            <if test="jcdwmc != null and jcdwmc != ''">
+                jcdwmc = #{jcdwmc},
+            </if>
+            <if test="jlbh != null and jlbh != ''">
+                jlbh = #{jlbh},
+            </if>
+            <if test="gcmc != null and gcmc != ''">
+                gcmc = #{gcmc},
+            </if>
+            <if test="htd != null and htd != ''">
+                htd = #{htd},
+            </if>
+            <if test="sgdw != null and sgdw != ''">
+                sgdw = #{sgdw},
+            </if>
+            <if test="jldw != null and jldw != ''">
+                jldw = #{jldw},
+            </if>
+            <if test="gcbw != null and gcbw != ''">
+                gcbw = #{gcbw},
+            </if>
+            <if test="ypxx != null and ypxx != ''">
+                ypxx = #{ypxx},
+            </if>
+            <if test="syjcrq != null">
+                syjcrq = #{syjcrq},
+            </if>
+            <if test="sytj != null and sytj != ''">
+                sytj = #{sytj},
+            </if>
+            <if test="wd != null and wd != ''">
+                wd = #{wd},
+            </if>
+            <if test="xdsd != null and xdsd != ''">
+                xdsd = #{xdsd},
+            </if>
+            <if test="jcyj != null and jcyj != ''">
+                jcyj = #{jcyj},
+            </if>
+            <if test="pdyj != null and pdyj != ''">
+                pdyj = #{pdyj},
+            </if>
+            <if test="zyyqsbmchbh != null and zyyqsbmchbh != ''">
+                zyyqsbmchbh = #{zyyqsbmchbh},
+            </if>
+            <if test="lqzl != null and lqzl != ''">
+                lqzl = #{lqzl},
+            </if>
+            <if test="lqbh != null and lqbh != ''">
+                lqbh = #{lqbh},
+            </if>
+            <if test="sccj != null and sccj != ''">
+                sccj = #{sccj},
+            </if>
+            <if test="scrq != null">
+                scrq = #{scrq},
+            </if>
+            <if test="ph != null and ph != ''">
+                ph = #{ph},
+            </if>
+            <if test="sycs != null and sycs != ''">
+                sycs = #{sycs},
+            </if>
+            <if test="cswd1 != null">
+                cswd1 = #{cswd1},
+            </if>
+            <if test="cswd2 != null">
+                cswd2 = #{cswd2},
+            </if>
+            <if test="a1 != null">
+                a1 = #{a1},
+            </if>
+            <if test="a2 != null">
+                a2 = #{a2},
+            </if>
+            <if test="a3 != null">
+                a3 = #{a3},
+            </if>
+            <if test="a4 != null">
+                a4 = #{a4},
+            </if>
+            <if test="a5 != null">
+                a5 = #{a5},
+            </if>
+            <if test="a6 != null">
+                a6 = #{a6},
+            </if>
+            <if test="a7 != null">
+                a7 = #{a7},
+            </if>
+            <if test="a8 != null">
+                a8 = #{a8},
+            </if>
+            <if test="a9 != null">
+                a9 = #{a9},
+            </if>
+            <if test="a10 != null">
+                a10 = #{a10},
+            </if>
+            <if test="a11 != null">
+                a11 = #{a11},
+            </if>
+            <if test="a12 != null">
+                a12 = #{a12},
+            </if>
+            <if test="a13 != null">
+                a13 = #{a13},
+            </if>
+            <if test="a14 != null">
+                a14 = #{a14},
+            </if>
+            <if test="b1 != null">
+                b1 = #{b1},
+            </if>
+            <if test="b2 != null">
+                b2 = #{b2},
+            </if>
+            <if test="b3 != null">
+                b3 = #{b3},
+            </if>
+            <if test="b4 != null">
+                b4 = #{b4},
+            </if>
+            <if test="b5 != null">
+                b5 = #{b5},
+            </if>
+            <if test="b6 != null">
+                b6 = #{b6},
+            </if>
+            <if test="b7 != null">
+                b7 = #{b7},
+            </if>
+            <if test="b8 != null">
+                b8 = #{b8},
+            </if>
+            <if test="b9 != null">
+                b9 = #{b9},
+            </if>
+            <if test="b10 != null">
+                b10 = #{b10},
+            </if>
+            <if test="b11 != null">
+                b11 = #{b11},
+            </if>
+            <if test="b12 != null">
+                b12 = #{b12},
+            </if>
+            <if test="b13 != null">
+                b13 = #{b13},
+            </if>
+            <if test="b14 != null">
+                b14 = #{b14},
+            </if>
+            <if test="dqyq != null">
+                dqyq = #{dqyq},
+            </if>
+            <if test="qyxzz != null">
+                qyxzz = #{qyxzz},
+            </if>
+            <if test="sdcz1 != null">
+                sdcz1 = #{sdcz1},
+            </if>
+            <if test="sdcz2 != null">
+                sdcz2 = #{sdcz2},
+            </if>
+            <if test="sdpjz != null">
+                sdpjz = #{sdpjz},
+            </if>
+            <if test="sdxcz != null">
+                sdxcz = #{sdxcz},
+            </if>
+            <if test="rdcz1 != null">
+                rdcz1 = #{rdcz1},
+            </if>
+            <if test="rdcz2 != null">
+                rdcz2 = #{rdcz2},
+            </if>
+            <if test="rdpjz != null">
+                rdpjz = #{rdpjz},
+            </if>
+            <if test="rdxcz != null">
+                rdxcz = #{rdxcz},
+            </if>
+            <if test="fjsm != null and fjsm != ''">
+                fjsm = #{fjsm},
+            </if>
+            <if test="position != null and position != ''">
+                position = #{position},
+            </if>
+            <if test="userid != null and userid != ''">
+                userid = #{userid},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+	<delete id="deleteCL11ById" parameterType="Long">
+ 		delete from cl11 where id = #{id}
+ 	</delete>
+
+ 	<delete id="deleteCL11ByIds" parameterType="Long">
+ 		delete from cl11 where id in
+ 		<foreach collection="array" item="id"
+				 open="(" separator="," close=")">
+ 			#{id}
+        </foreach>
+ 	</delete>
+
+</mapper> 

@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.CL10Mapper">
+	<!-- 设置查询之后返回的结果集
+	column表示数据库字段名，property表示实体类属性名 -->
+
+	<resultMap type="CL10" id="Cl10Results">
+		<result property="jlbh" column="jlbh"/>
+		<result property="gcmc" column="gcmc"/>
+		<result property="sgdw" column="sgdw"/>
+		<result property="jcdwmc" column="jcdwmc"/>
+		<result property="htd" column="htd"/>
+		<result property="jldw" column="jldw"/>
+		<result property="gcbw_yt" column="gcbw_yt"/>
+		<result property="ypxx" column="ypxx"/>
+		<result property="fjsm" column="fjsm"/>
+		<result property="sytj_ssd" column="sytj_ssd"/>
+		<result property="sytj_xdsd" column="sytj_xdsd"/>
+		<result property="jcyj" column="jcyj"/>
+		<result property="pdyj" column="pdyj"/>
+		<result property="zyyqsbmcjbh" column="zyyqsbmcjbh"/>
+		<result property="lqzl" column="lqzl"/>
+		<result property="lqbh" column="lqbh"/>
+		<result property="sccj" column="sccj"/>
+		<result property="scrq" column="scrq"/>
+		<result property="scph" column="scph"/>
+		<result property="m1" column="m1"/>
+		<result property="m2" column="m2"/>
+		<result property="m3" column="m3"/>
+		<result property="m4" column="m4"/>
+		<result property="m5" column="m5"/>
+		<result property="a1" column="a1"/>
+		<result property="a2" column="a2"/>
+		<result property="a3" column="a3"/>
+		<result property="a4" column="a4"/>
+		<result property="a5" column="a5"/>
+		<result property="sb1" column="sb1"/>
+		<result property="sb2" column="sb2"/>
+		<result property="sb" column="sb"/>
+		<result property="id" column="id"/>
+		<result property="userid" column="userid"/>
+		<result property="position" column="position"/>
+		<result property="syjcrq" column="syjcrq"/>
+		<result property="createdTime" column="createdTime"/>
+		<result property="lastUpdatedTime" column="lastUpdatedTime"/>
+	</resultMap>
+
+
+ <!--   <select id="selectCL10List" parameterType="CL10"
+			resultMap="CL10Result">
+		select * from cl10
+		where 1 = 1
+		  /*精准查询*/
+		<if test="jlbh != null and name != ''">
+			AND name = #{name}
+		</if>
+&lt;!&ndash;
+		/*模糊查询*/
+		/* 对整形int、float，jlbh！=0 */
+		<if test="jlbh!=0">
+			AND jlbh like concat('%', #{wendu}, '%')
+		</if>
+
+		/* 对字符串类型，jlbh！=null */
+		<if test="jlbh!=null">
+			AND jlbh like concat('%', #{wendu}, '%')
+		</if>
+		&ndash;&gt;
+
+		&lt;!&ndash; 数据范围过滤 &ndash;&gt;
+		${params.dataScope}	
+	</select>-->
+
+
+	<!--parameterType传递参数类型， id：Mapper文件中对应的方法名称， resultMap：返回结果集-->
+	<select id="selectCL10List" parameterType="CL10"  resultMap="Cl10Results">
+		SELECT * FROM cl10
+		where 1=1	 /*if满足判定条件才会把内部的语句插入到where后面，所以需要1=1作为前置where条件，构成完整的select语句*/
+		<trim suffixOverrides=",">
+			<if test="jlbh != null and jlbh != ''">
+				AND jlbh = #{jlbh},
+			</if>
+			<if test="jcdwmc != null and jcdwmc != ''">
+				AND jcdwmc = #{jcdwmc},
+			</if>
+			<if test="gcmc != null and gcmc != ''">
+				AND gcmc = #{gcmc},
+			</if>
+			<if test="sgdw != null and sgdw != ''">
+		         AND sgdw = #{sgdw},
+			</if>
+			<if test="jldw != null and jldw != ''">
+		         AND jldw = #{jldw},
+			</if>
+			<if test="lqbh != null and lqbh != ''">
+		         AND lqbh = #{lqbh},
+			</if>
+			<if test="userid != null and userid !=''">
+		        AND userid = #{userid},
+			</if>
+
+		</trim>
+		ORDER BY createdTime desc
+
+		<!--	<where>
+					if           where条件的另一种写法，不需要1=1,满足条件才形成where
+				</where>	-->
+	</select>
+
+	<!-- 根据ID查询 -->
+	<select id="selectCL10ById" parameterType="Integer" resultMap="Cl10Results">
+		SELECT * FROM cl10
+		WHERE id = #{id}
+	</select>
+
+	<!-- 根据记录编号查询 -->
+	<select id="selectCL10ByJlbh" parameterType="String" resultMap="Cl10Results">
+		SELECT * FROM cl10
+		WHERE jlbh = #{jlbh}
+	</select>
+
+	<select id="selectCL10sOrderByCreatedTime" parameterType="CL10" resultMap="Cl10Results">
+		SELECT * FROM cl10
+		ORDER BY createdTime desc
+	</select>
+
+	<!-- 新增记录 -->
+	<insert id="insertCL10" parameterType="CL10"
+			useGeneratedKeys="true"
+			keyProperty="id">
+		INSERT INTO CL10 (
+		<trim suffixOverrides=",">
+			<if test="jlbh != null and jlbh != ''">jlbh,</if>
+			<if test="jcdwmc != null and jcdwmc != ''">jcdwmc,</if>
+			<if test="gcmc != null and gcmc != ''">gcmc,</if>
+			<if test="htd != null and htd != ''">htd,</if>
+			<if test="sgdw != null and sgdw != ''">sgdw,</if>
+			<if test="jldw != null and jldw != ''">jldw,</if>
+			<if test="gcbw_yt != null and gcbw_yt != ''">gcbw_yt,</if>
+			<if test="ypxx != null and ypxx != ''">ypxx,</if>
+			<if test="fjsm != null and fjsm != ''">fjsm,</if>
+			<if test="sytj_ssd != null">sytj_ssd,</if>
+			<if test="sytj_xdsd != null">sytj_xdsd,</if>
+			<if test="jcyj != null and jcyj != ''">jcyj,</if>
+			<if test="pdyj != null and pdyj != ''">pdyj,</if>
+			<if test="zyyqsbmcjbh != null and zyyqsbmcjbh != ''">zyyqsbmcjbh,</if>
+			<if test="lqzl != null and lqzl != ''">lqzl,</if>
+			<if test="lqbh != null and lqbh != ''">lqbh,</if>
+			<if test="sccj != null and sccj != ''">sccj,</if>
+			<if test="scrq != null">scrq,</if>
+			<if test="scph != null and scph != ''">scph,</if>
+			<if test="m1 != null">m1,</if>
+			<if test="m2 != null">m2,</if>
+			<if test="m3 != null">m3,</if>
+			<if test="m4 != null">m4,</if>
+			<if test="m5 != null">m5,</if>
+			<if test="a1 != null">a1,</if>
+			<if test="a2 != null">a2,</if>
+			<if test="a3 != null">a3,</if>
+			<if test="a4 != null">a4,</if>
+			<if test="a5 != null">a5,</if>
+			<if test="sb1 != null">sb1,</if>
+			<if test="sb2 != null">sb2,</if>
+			<if test="sb != null">sb,</if>
+			<if test="userid != null and userid !=''">userid,</if>
+			<if test="position != null">position,</if>
+			<if test="syjcrq != null">syjcrq,</if>
+			<if test="createdTime != null">createdTime,</if>
+			<if test="lastUpdatedTime != null">lastUpdatedTime,</if>
+		</trim>
+        )VALUE(
+		<trim suffixOverrides=",">
+			<if test="jlbh != null and jlbh != ''">#{jlbh},</if>
+			<if test="jcdwmc != null and jcdwmc != ''">#{jcdwmc},</if>
+			<if test="gcmc != null and gcmc != ''">#{gcmc},</if>
+			<if test="htd != null and htd != ''">#{htd},</if>
+			<if test="sgdw != null and sgdw != ''">#{sgdw},</if>
+			<if test="jldw != null and jldw != ''">#{jldw},</if>
+			<if test="gcbw_yt != null and gcbw_yt != ''">#{gcbw_yt},</if>
+			<if test="ypxx != null and ypxx != ''">#{ypxx},</if>
+			<if test="fjsm != null and fjsm != ''">#{fjsm},</if>
+			<if test="sytj_ssd != null">#{sytj_ssd},</if>
+			<if test="sytj_xdsd != null">#{sytj_xdsd},</if>
+			<if test="jcyj != null and jcyj != ''">#{jcyj},</if>
+			<if test="pdyj != null and pdyj != ''">#{pdyj},</if>
+			<if test="zyyqsbmcjbh != null and zyyqsbmcjbh != ''">#{zyyqsbmcjbh},</if>
+			<if test="lqzl != null and lqzl != ''">#{lqzl},</if>
+			<if test="lqbh != null and lqbh != ''">#{lqbh},</if>
+			<if test="sccj != null and sccj != ''">#{sccj},</if>
+			<if test="scrq != null">#{scrq},</if>
+			<if test="scph != null and scph != ''">#{scph},</if>
+			<if test="m1 != null">#{m1},</if>
+			<if test="m2 != null">#{m2},</if>
+			<if test="m3 != null">#{m3},</if>
+			<if test="m4 != null">#{m4},</if>
+			<if test="m5 != null">#{m5},</if>
+			<if test="a1 != null">#{a1},</if>
+			<if test="a2 != null">#{a2},</if>
+			<if test="a3 != null">#{a3},</if>
+			<if test="a4 != null">#{a4},</if>
+			<if test="a5 != null">#{a5},</if>
+			<if test="sb1 != null">#{sb1},</if>
+			<if test="sb2 != null">#{sb2},</if>
+			<if test="sb != null">#{sb},</if>
+			<if test="userid != null  and userid !=''">#{userid},</if>
+			<if test="position != null">#{position},</if>
+			<if test="syjcrq != null">#{syjcrq},</if>
+			<if test="createdTime != null">#{createdTime},</if>
+			<if test="lastUpdatedTime != null">#{lastUpdatedTime},</if>
+		</trim>
+		)
+	</insert>
+
+	<!-- 修改记录 -->
+	<update id="updateCL10" parameterType="CL10">
+		UPDATE cl10
+		<set>
+			<trim suffixOverrides=",">
+			<if test="jlbh != null and jlbh != ''">jlbh = #{jlbh},</if>
+			<if test="jcdwmc != null and jcdwmc != ''">jcdwmc = #{jcdwmc},</if>
+			<if test="gcmc != null and gcmc != ''">gcmc = #{gcmc},</if>
+			<if test="htd != null and htd != ''">htd = #{htd},</if>
+			<if test="sgdw != null and sgdw != ''">sgdw = #{sgdw},</if>
+			<if test="jldw != null and jldw != ''">jldw = #{jldw},</if>
+			<if test="gcbw_yt != null and gcbw_yt != ''">gcbw_yt = #{gcbw_yt},</if>
+			<if test="ypxx != null and ypxx != ''">ypxx = #{ypxx},</if>
+			<if test="fjsm != null and fjsm != ''">fjsm = #{fjsm},</if>
+			<if test="sytj_ssd != null">sytj_ssd = #{sytj_ssd},</if>
+			<if test="sytj_xdsd != null">sytj_xdsd = #{sytj_xdsd},</if>
+			<if test="jcyj != null and jcyj != ''">jcyj = #{jcyj},</if>
+			<if test="pdyj != null and pdyj != ''">pdyj = #{pdyj},</if>
+			<if test="zyyqsbmcjbh != null and zyyqsbmcjbh != ''">zyyqsbmcjbh = #{zyyqsbmcjbh},</if>
+			<if test="lqzl != null and lqzl != ''">lqzl = #{lqzl},</if>
+			<if test="lqbh != null and lqbh != ''">lqbh = #{lqbh},</if>
+			<if test="sccj != null and sccj != ''">sccj = #{sccj},</if>
+			<if test="scrq != null">scrq = #{scrq},</if>
+			<if test="scph != null and scph != ''">scph = #{scph},</if>
+			<if test="m1 != null">m1 = #{m1},</if>
+			<if test="m2 != null">m2 = #{m2},</if>
+			<if test="m3 != null">m3 = #{m3},</if>
+			<if test="m4 != null">m4 = #{m4},</if>
+			<if test="m5 != null">m5 = #{m5},</if>
+			<if test="a1 != null">a1 = #{a1},</if>
+			<if test="a2 != null">a2 = #{a2},</if>
+			<if test="a3 != null">a3 = #{a3},</if>
+			<if test="a4 != null">a4 = #{a4},</if>
+			<if test="a5 != null">a5 = #{a5},</if>
+			<if test="sb1 != null">sb1 = #{sb1},</if>
+			<if test="sb2 != null">sb2 = #{sb2},</if>
+			<if test="sb != null">sb = #{sb},</if>
+			<if test="userid != null and userid !=''">userid = #{userid},</if>
+			<if test="position != null">position = #{position},</if>
+			<if test="syjcrq != null">syjcrq = #{syjcrq},</if>
+			<if test="lastUpdatedTime != null">lastUpdatedTime = #{lastUpdatedTime},</if>
+			</trim>
+		</set>
+		WHERE id = #{id}
+	</update>
+
+	<!-- 删除记录 -->
+	<!-- by id -->
+	<delete id="deleteCL10ById" parameterType="Integer">
+		DELETE FROM cl10 WHERE id = #{id}
+	</delete>
+
+	<!-- by 记录编号 -->
+	<delete id="deleteCL10ByJlbh" parameterType="String">
+		DELETE FROM cl10 WHERE jlbh = #{jlbh}
+	</delete>
+
+	<!-- 批量删除记录 -->
+	<delete id="deleteCL10ByIds" parameterType="Integer">
+		DELETE FROM cl10 WHERE id IN
+		<foreach item="id" index="index" collection="ids" open="(" separator="," close=")">
+			#{id}
+		</foreach>
+	</delete>
+	
+</mapper> 

@@ -1,0 +1,884 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.CS22RecordMapper">
+	<!-- 设置查询之后返回的结果集
+	 column -->
+	<resultMap type="CS22Record" id="CS22RecordResult">
+		<id     property="id"      	 column="id"      	/>
+		<result property="jcdwmc"    column="jcdwmc"    /> <!-- 检测单位名称 -->
+		<result property="jlbh"    	 column="jlbh"    	/> <!-- 记录编号 -->
+		<result property="gcmc"    	 column="gcmc"  	/> <!-- 工程名称 -->
+		<result property="htd"  	 column="htd"       /> <!-- 合同段 -->
+		<result property="sgdw"  	 column="sgdw"      /> <!-- 施工单位 -->
+		<result property="jldw"  	 column="jldw"      /> <!-- 监理单位 -->
+		<result property="gcbwyt"  	 column="gcbwyt"      /> <!-- 工程部位/用途 -->
+		<result property="ypxx"  	 column="ypxx"      /> <!-- 样品信息 -->
+		<result property="syjcrq"  	 column="syjcrq"    /> <!-- 试验检测日期 -->
+		<result property="sytj_wd"  	 column="sytj_wd"    /> <!-- 实验条件温度 -->
+		<result property="sytj_sd"  	 column="sytj_sd"    /> <!-- 实验条件湿度 -->
+		<result property="csyj"  	 column="csyj"    /> <!-- 测试依据 -->
+		<result property="pdyj"  	 column="pdyj"    /> <!-- 判定依据 -->
+		<result property="zyyjsbmcjbh"  	 column="zyyjsbmcjbh"    /> <!-- 主要仪器设备名称和编号 -->
+		<result property="sbhntxnphb"  	 column="sbhntxnphb"    /> <!-- 试扮混泥土性能,提出试伴配合比 -->
+		<result property="dld_A1"  	 column="dld_A1"    /> <!-- 坍落度a1 -->
+		<result property="dld_A2"  	 column="dld_A2"    /> <!-- 坍落度a2 -->
+		<result property="dld_A"  	 column="dld_A"    /> <!-- 坍落度a -->
+		<result property="kzd_B1"  	 column="kzd_B1"    /> <!-- 扩展度b1 -->
+		<result property="kzd_B2"  	 column="kzd_B2"    /> <!-- 扩展度b2 -->
+		<result property="kzd_B1"  	 column="kzd_B1"    /> <!-- 扩展度b1 -->
+		<result property="kzd_B"  	 column="kzd_B"    /> <!-- 扩展度b -->
+		<result property="tbhw_gd"  	 column="tbhw_gd"    /> <!-- 砼拌合物_棍度 -->
+		<result property="tbhw_hsqk"  	 column="tbhw_hsqk"    /> <!-- 砼拌合物_含沙情况 -->
+		<result property="tbhw_njx"  	 column="tbhw_njx"    /> <!-- 砼拌合物_粘聚性 -->
+		<result property="tbhw_bsx"  	 column="tbhw_bsx"    /> <!-- 砼拌合物_保水性 -->
+		<result property="bz"  	 column="bz"    /> <!-- 备注 -->
+		<result property="sjb_C"  	 column="sjb_C"    /> <!-- 水胶比 -->
+		<result property="t_tzl_D1"  	 column="t_tzl_D1"    /> <!-- 筒+砼质量1 -->
+		<result property="t_tzl_D2"  	 column="t_tzl_D2"    /> <!-- 筒+砼质量2 -->
+		<result property="t_zl_E1"  	 column="t_zl_E1"    /> <!-- 筒质量1 -->
+		<result property="t_zl_E2"  	 column="t_zl_E2"    /> <!-- 桶质量2 -->
+		<result property="t_zl_F1"  	 column="t_zl_F1"    /> <!-- 扩展度b1 -->
+		<result property="t_zl_F2"  	 column="t_zl_F2"    /> <!-- 砼质量1 -->
+		<result property="t_rj_G1"  	 column="t_rj_G1"    /> <!-- 砼质量2 -->
+		<result property="t_rj_G2"  	 column="t_rj_G2"    /> <!-- 筒容积2 -->
+		<result property="scbgmd_dz_H1"  	 column="scbgmd_dz_H1"    /> <!-- 实测表观密度单值1 -->
+		<result property="scbgmd_dz_H2"  	 column="scbgmd_dz_H2"    /> <!-- 实测表观密度单值2 -->
+		<result property="scbgmd_dz_H"  	 column="scbgmd_dz_H"    /> <!-- scbgmd_dz_H -->
+		<result property="bjmdjsz_p"  	 column="bjmdjsz_p"    /> <!-- 表观密度计算值 -->
+		<result property="phjjzxs_sigma"  	 column="phjjzxs_sigma"    /> <!-- 配合比较正系数sigma -->
+		<result property="sbpb_1"  	 column="sbpb_1"    /> <!-- 试板配比1 -->
+		<result property="sbpb_2"  	 column="sbpb_2"    /> <!-- 试板配比2 -->
+		<result property="jjsjb"  	 column="jjsjb"    /> <!-- 基准水胶比 -->
+		<result property="sjjsff"  	 column="sjjsff"    /> <!-- 设计计算方法 -->
+		<result property="jdmd"  	 column="jdmd"    /> <!-- 假定密度 -->
+		<result property="sjb_I1"  	 column="sjb_I1"    /> <!-- 水胶比1 -->
+		<result property="sjb_I2"  	 column="sjb_I2"    /> <!-- 水胶比2 -->
+		<result property="sn_J1"  	 column="sn_J1"    /> <!-- 水泥1 -->
+		<result property="sn_J2"  	 column="sn_J2"    /> <!-- 水泥2 -->
+		<result property="xjl_K1"  	 column="xjl_K1"    /> <!-- 细集料1 -->
+		<result property="xjl_K2"  	 column="xjl_K2"    /> <!-- 细集料2 -->
+		<result property="cjl_L1"  	 column="cjl_L1"    /> <!-- 粗集料1 -->
+		<result property="cjl_L2"  	 column="cjl_L2"    /> <!-- 粗集料2 -->
+		<result property="s_M1"  	 column="s_M1"    /> <!-- 水1 -->
+		<result property="s_M2"  	 column="sn_J2"    /> <!-- 水2 -->
+		<result property="wjj_mc1"  	 column="wjj_mc1"    /> <!-- 外加剂名称1 -->
+		<result property="wjjzlmc1_N1"  	 column="wjjzlmc1_N1"    /> <!-- 外加剂1质量1 -->
+		<result property="wjjzlmc1_N2"  	 column="wjjzlmc1_N2"    /> <!-- 外加剂1质量2 -->
+		<result property="wjj_mc2"  	 column="wjj_mc2"    /> <!-- 外加剂名称2 -->
+		<result property="wjjzlmc2_O1"  	 column="wjjzlmc2_O1"    /> <!-- 外加剂2质量1 -->
+		<result property="wjjzlmc2_O2"  	 column="wjjzlmc2_O2"    /> <!-- 外加剂2质量2 -->
+		<result property="kwchl_mc1"  	 column="kwchl_mc1"    /> <!-- 矿物掺和料名称1 -->
+		<result property="kwchlmc1_P1"  	 column="kwchlmc1_P1"    /> <!-- 矿物掺和料名称1质量1 -->
+		<result property="kwchlmc1_P2"  	 column="kwchlmc1_P2"    /> <!-- 矿物掺和料名称1质量2 -->
+		<result property="kwchl_mc2"  	 column="kwchl_mc2"    /> <!-- 矿物掺和料名称2 -->
+		<result property="kwchlmc2_Q1"  	 column="kwchlmc2_Q1"    /> <!-- 矿物掺和料名称2质量1 -->
+		<result property="kwchlmc2_Q2"  	 column="kwchlmc2_Q2"    /> <!-- 矿物掺和料名称2质量2 -->
+		<result property="sl_R1"  	 column="sl_R1"    /> <!-- 砂率1 -->
+		<result property="sl_R2"  	 column="sl_R2"    /> <!-- 砂率2 -->
+
+	</resultMap>
+
+	<!-- mybatis的select方法, #是参数占位符号，会被实际的值取代 -->
+	<select id="selectCS22RecordList" parameterType="CS22Record"
+			resultMap="CS22RecordResult">
+		select * from cs22Record
+		where 1 = 1 <!-- 永真条件 -->
+		<if test="id != null and id != 0">
+			AND id like concat('%', #{id}, '%')
+		</if>
+		<!--检测单位名称-->
+		<if test="jcdwmc != null and jcdwmc != ''">
+			AND jcdwmc = #{jcdwmc}
+		</if>
+		<!--记录编号-->
+		<!--<if test="jlbh != null and jlbh != ''">
+			AND jlbh like concat('%', #{jlbh}, '%')
+		</if>
+		&lt;!&ndash;工程名称&ndash;&gt;
+		<if test="gcmc != null and gcmc != ''">
+			AND gcmc= #{gcmc}
+		</if>
+		&lt;!&ndash;合同段&ndash;&gt;
+		<if test="htd != null and htd != ''">
+			AND htd= #{htd}
+		</if>
+		&lt;!&ndash;施工单位&ndash;&gt;
+		<if test="sgdw != null and sgdw != ''">
+			AND sgdw= #{sgdw}
+		</if>
+		&lt;!&ndash;监理单位&ndash;&gt;
+		<if test="jldw != null and jldw != ''">
+			AND jldw= #{jldw}
+		</if>
+		&lt;!&ndash;工程部位/用途 &ndash;&gt;
+		<if test="gcbwyt != null and gcbwyt != ''">
+			AND gcbwyt= #{gcbwyt}
+		</if>
+		&lt;!&ndash;样品信息 &ndash;&gt;
+		<if test="ypxx != null and ypxx != ''">
+			AND ypxx= #{ypxx}
+		</if>-->
+		<!--   -->
+
+<!--		<if test="id != null and id != 0">-->
+<!--			AND id like concat('%', #{id}, '%')-->
+<!--		</if> 移动到上面 -->
+
+		<!--试验检测日期-->
+		<!--<if test="syjcrq != null">
+			AND syjcrq like concat('%', #{syjcrq}, '%')
+		</if>
+		&lt;!&ndash;实验条件_温度 &ndash;&gt;
+		<if test="sytj_wd != null and sytj_wd != ''">
+			AND sytj_wd = #{sytj_wd}
+		</if>
+		&lt;!&ndash;实验条件_湿度 &ndash;&gt;
+		<if test="sytj_sd != null and sytj_sd != ''">
+			AND sytj_sd = #{sytj_sd}
+		</if>
+		&lt;!&ndash;测试依据 &ndash;&gt;
+		<if test="csyj != null and csyj != ''">
+			AND csyj= #{csyj}
+		</if>
+		&lt;!&ndash;判定依据 &ndash;&gt;
+		<if test="pdyj != null and pdyj != ''">
+			AND pdyj= #{pdyj}
+		</if>-->
+		<!--样品信息 -->
+<!--		<if test="ypxx != null and ypxx != ''">-->
+<!--			AND ypxx= #{ypxx}-->
+<!--		</if>-->
+		<!--主要仪器设备名称和编号 -->
+		<!--<if test="zyyjsbmcjbh != null and zyyjsbmcjbh != ''">
+			AND zyyjsbmcjbh= #{zyyjsbmcjbh}
+		</if>
+		&lt;!&ndash;试扮混泥土性能,提出试伴配合比 &ndash;&gt;
+		<if test="sbhntxnphb != null and sbhntxnphb != ''">
+			AND sbhntxnphb= #{sbhntxnphb}
+		</if>
+		&lt;!&ndash;坍落度a1 &ndash;&gt;
+		<if test="dld_A1 != null ">
+			AND dld_A1= #{dld_A1}
+		</if>
+		&lt;!&ndash;坍落度a2 &ndash;&gt;
+		<if test="dld_A2 != null ">
+			AND dld_A2= #{dld_A2}
+		</if>-->
+		  <!-- 自动跟新 -->
+<!--		&lt;!&ndash;坍落度a &ndash;&gt;-->
+<!--		<if test="dld_A != null and dld_A != ''">-->
+<!--			AND dld_A= #{dld_A}-->
+<!--		</if>-->
+		<!--扩展度b1 -->
+	<!--	<if test="kzd_B1 != null ">
+			AND kzd_B1= #{kzd_B1}
+		</if>
+		&lt;!&ndash;扩展度b2 &ndash;&gt;
+		<if test="kzd_B2 != null ">
+			AND kzd_B2= #{kzd_B2}
+		</if>-->
+		  <!-- 自动更新 -->
+<!--		&lt;!&ndash;扩展度b &ndash;&gt;-->
+<!--		<if test="kzd_B != null ">-->
+<!--			AND kzd_B= #{kzd_B}-->
+<!--		</if>-->
+		<!--砼拌合物_棍度 -->
+		<!--<if test="tbhw_gd != null and tbhw_gd != ''">
+			AND tbhw_gd= #{tbhw_gd}
+		</if>
+		&lt;!&ndash;砼拌合物_含沙情况 &ndash;&gt;
+		<if test="tbhw_hsqk != null and tbhw_hsqk != ''">
+			AND tbhw_hsqk= #{tbhw_hsqk}
+		</if>
+		&lt;!&ndash;砼拌合物_粘聚性 &ndash;&gt;
+		<if test="tbhw_njx != null and tbhw_njx != ''">
+			AND tbhw_njx= #{tbhw_njx}
+		</if>
+		&lt;!&ndash;砼拌合物_保水性 &ndash;&gt;
+		<if test="tbhw_bsx != null and tbhw_bsx != ''">
+			AND tbhw_bsx= #{tbhw_bsx}
+		</if>
+		&lt;!&ndash;备注 &ndash;&gt;
+		<if test="bz != null and bz != ''">
+			AND bz= #{bz}
+		</if>
+		&lt;!&ndash;水胶比 &ndash;&gt;
+		<if test="sjb_C != null ">
+			AND sjb_C= #{sjb_C}
+		</if>
+		&lt;!&ndash;筒+砼质量1 &ndash;&gt;
+		<if test="t_tzl_D1 != null ">
+			AND t_tzl_D1= #{t_tzl_D1}
+		</if>
+		&lt;!&ndash;筒+砼质量2 &ndash;&gt;
+		<if test="t_tzl_D2 != null ">
+			AND t_tzl_D2= #{t_tzl_D2}
+		</if>
+		&lt;!&ndash;筒质量1 &ndash;&gt;
+		<if test="t_zl_E1 != null ">
+			AND t_zl_E1= #{t_zl_E1}
+		</if>
+		&lt;!&ndash;桶质量2 &ndash;&gt;
+		<if test="t_zl_E2 != null ">
+			AND t_zl_E2= #{t_zl_E2}
+		</if>
+		&lt;!&ndash;砼质量1 &ndash;&gt;
+		<if test="t_zl_F1 != null ">
+			AND t_zl_F1= #{t_zl_F1}
+		</if>
+		&lt;!&ndash;砼质量2 &ndash;&gt;
+		<if test="t_zl_F2 != null ">
+			AND t_zl_F2= #{t_zl_F2}
+		</if>
+		&lt;!&ndash;筒容积1 &ndash;&gt;
+		<if test="t_rj_G1 != null">
+			AND t_rj_G1= #{t_rj_G1}
+		</if>
+		&lt;!&ndash;筒容积2 &ndash;&gt;
+		<if test="t_rj_G2 != null ">
+			AND t_rj_G2= #{t_rj_G2}
+		</if>-->
+		<!--自动更新 -->
+<!--		&lt;!&ndash;实测表观密度单值1 &ndash;&gt;-->
+<!--		<if test="scbgmd_dz_H1 != null and scbgmd_dz_H1 != ''">-->
+<!--			AND scbgmd_dz_H1= #{scbgmd_dz_H1}-->
+<!--		</if>-->
+<!--		&lt;!&ndash;实测表观密度单值2 &ndash;&gt;-->
+<!--		<if test="scbgmd_dz_H2 != null and scbgmd_dz_H2 != ''">-->
+<!--			AND scbgmd_dz_H2= #{scbgmd_dz_H2}-->
+<!--		</if>-->
+<!--		&lt;!&ndash;实测表观密度平均值 &ndash;&gt;-->
+<!--		<if test="scbgmd_dz_H != null and scbgmd_dz_H != ''">-->
+<!--			AND scbgmd_dz_H= #{scbgmd_dz_H}-->
+<!--		</if>-->
+		<!--表观密度计算值 -->
+		<!--<if test="bjmdjsz_p != null ">
+			AND bjmdjsz_p= #{bjmdjsz_p}
+		</if>
+		&lt;!&ndash;配合比较正系数sigma &ndash;&gt;
+		<if test="phjjzxs_sigma != null ">
+			AND phjjzxs_sigma= #{phjjzxs_sigma}
+		</if>
+		&lt;!&ndash;试板配比1 &ndash;&gt;
+		<if test="sbpb_1 != null ">
+			AND sbpb_1= #{sbpb_1}
+		</if>
+		&lt;!&ndash;试板配比2 &ndash;&gt;
+		<if test="sbpb_2 != null ">
+			AND sbpb_2= #{sbpb_2}
+		</if>
+		&lt;!&ndash;基准水胶比 &ndash;&gt;
+		<if test="jjsjb != null ">
+			AND jjsjb= #{jjsjb}
+		</if>
+		&lt;!&ndash;设计计算方法 &ndash;&gt;
+		<if test="sjjsff != null and sjjsff != ''">
+			AND sjjsff= #{sjjsff}
+		</if>
+		&lt;!&ndash;假定密度 &ndash;&gt;
+		<if test="jdmd != null ">
+			AND jdmd= #{jdmd}
+		</if>
+		&lt;!&ndash;水胶比1 &ndash;&gt;
+		<if test="sjb_I1 != null ">
+			AND sjb_I1= #{sjb_I1}
+		</if>
+		&lt;!&ndash;水胶比2 &ndash;&gt;
+		<if test="sjb_I2 != null ">
+			AND sjb_I2= #{sjb_I2}
+		</if>
+		&lt;!&ndash;水泥1 &ndash;&gt;
+		<if test="sn_J1 != null ">
+			AND sn_J1= #{sn_J1}
+		</if>
+		&lt;!&ndash;水泥2 &ndash;&gt;
+		<if test="sn_J2 != null ">
+			AND sn_J2= #{sn_J2}
+		</if>
+		&lt;!&ndash;细集料1 &ndash;&gt;
+		<if test="xjl_K1 != null ">
+			AND xjl_K1= #{xjl_K1}
+		</if>
+		&lt;!&ndash;细集料2 &ndash;&gt;
+		<if test="xjl_K2 != null ">
+			AND xjl_K2= #{xjl_K2}
+		</if>
+		&lt;!&ndash;粗集料1 &ndash;&gt;
+		<if test="cjl_L1 != null">
+			AND cjl_L1= #{cjl_L1}
+		</if>
+		&lt;!&ndash;粗集料2 &ndash;&gt;
+		<if test="cjl_L2 != null ">
+			AND cjl_L2= #{cjl_L2}
+		</if>
+		&lt;!&ndash;水1 &ndash;&gt;
+		<if test="s_M1 != null">
+			AND s_M1= #{s_M1}
+		</if>
+		&lt;!&ndash;水2 &ndash;&gt;
+		<if test="s_M2 != null ">
+			AND s_M2= #{s_M2}
+		</if>
+		&lt;!&ndash;外加剂名称1 &ndash;&gt;
+		<if test="wjj_mc1 != null and wjj_mc1 != ''">
+			AND wjj_mc1= #{wjj_mc1}
+		</if>
+		&lt;!&ndash;外加剂1质量1 &ndash;&gt;
+		<if test="wjjzlmc1_N1 != null">
+			AND wjjzlmc1_N1= #{wjjzlmc1_N1}
+		</if>
+		&lt;!&ndash;外加剂1质量2 &ndash;&gt;
+		<if test="wjjzlmc1_N2 != null ">
+			AND wjjzlmc1_N2= #{wjjzlmc1_N2}
+		</if>
+		&lt;!&ndash;外加剂名称2 &ndash;&gt;
+		<if test="wjj_mc2 != null and wjj_mc2 != ''">
+			AND wjj_mc2= #{wjj_mc2}
+		</if>
+		&lt;!&ndash;外加剂2质量1 &ndash;&gt;
+		<if test="wjjzlmc2_O1 != null ">
+			AND wjjzlmc2_O1= #{wjjzlmc2_O1}
+		</if>
+		&lt;!&ndash;外加剂2质量2 &ndash;&gt;
+		<if test="wjjzlmc2_O2 != null ">
+			AND wjjzlmc2_O2= #{wjjzlmc2_O2}
+		</if>
+		&lt;!&ndash;矿物掺和料名称1 &ndash;&gt;
+		<if test="kwchl_mc1 != null and kwchl_mc1 != ''">
+			AND kwchl_mc1= #{kwchl_mc1}
+		</if>
+		&lt;!&ndash;矿物掺和料名称1质量1 &ndash;&gt;
+		<if test="kwchlmc1_P1 != null ">
+			AND kwchlmc1_P1= #{kwchlmc1_P1}
+		</if>
+		&lt;!&ndash;矿物掺和料名称1质量2 &ndash;&gt;
+		<if test="kwchlmc1_P2 != null ">
+			AND kwchlmc1_P2= #{kwchlmc1_P2}
+		</if>
+		&lt;!&ndash;矿物掺和料名称2 &ndash;&gt;
+		<if test="kwchl_mc2 != null and kwchl_mc2 != ''">
+			AND kwchl_mc2= #{kwchl_mc2}
+		</if>
+		&lt;!&ndash; &ndash;&gt;
+		<if test="kwchlmc2_Q1 != null '">
+			AND kwchlmc2_Q1= #{kwchlmc2_Q1}
+		</if>
+		&lt;!&ndash;矿物掺和料名称2质量2 &ndash;&gt;
+		<if test="kwchlmc2_Q2 != null ">
+			AND kwchlmc2_Q2= #{kwchlmc2_Q2}
+		</if>
+		&lt;!&ndash;砂率1 &ndash;&gt;
+		<if test="sl_R1 != null ">
+			AND sl_R1= #{sl_R1}
+		</if>
+		&lt;!&ndash;砂率2 &ndash;&gt;
+		<if test="sl_R2 != null ">
+			AND sl_R2 = #{sl_R2}
+		</if>-->
+
+
+
+
+		<!-- 数据范围过滤 -->
+		${params.dataScope}
+	</select>
+
+	<select id="selectCS22RecordById" parameterType="Long"
+			resultMap="CS22RecordResult">
+		select * from cs22Record where id = #{id} ;
+	</select>
+
+	<insert id="insertCS22Record" parameterType="CS22Record"
+			useGeneratedKeys="true"
+			keyProperty="id">
+		insert into cs22Record(
+		<!--检测单位名称 -->
+		<if test="jcdwmc != null and jcdwmc != ''">jcdwmc,</if>
+		<!--记录编号 -->
+		<if test="jlbh != null and jlbh != ''">jlbh,</if>
+		<!--工程名称 -->
+		<if test="gcmc != null and gcmc != ''">gcmc,</if>
+		<!--合同段 -->
+		<if test="htd != null and htd != ''">htd,</if>
+		<!--施工单位 -->
+		<if test="sgdw != null and sgdw != ''">sgdw,</if>
+		<!--监理单位 -->
+		<if test="jldw != null and jldw != ''">jldw,</if>
+		<!--工程部位/用途 -->
+		<if test="gcbwyt != null and gcbwyt != ''">gcbwyt,</if>
+		<!--样品信息 -->
+		<if test="ypxx != null and ypxx != ''">ypxx,</if>
+		<!--试验检测日期 -->
+		<if test="syjcrq != null">syjcrq,</if>
+		<!--实验条件_温度 -->
+		<if test="sytj_wd != null ">sytj_wd,</if>
+		<!--实验条件_湿度 -->
+		<if test="sytj_sd != null ">sytj_sd,</if>
+		<!--测试依据 -->
+		<if test="csyj != null and csyj != ''">csyj,</if>
+		<!--判定依据 -->
+		<if test="pdyj != null and pdyj != ''">pdyj,</if>
+		<!--主要仪器设备名称和编号 -->
+		<if test="zyyjsbmcjbh != null and zyyjsbmcjbh != ''">zyyjsbmcjbh,</if>
+		<!--试扮混泥土性能,提出试伴配合比 -->
+		<if test="sbhntxnphb != null and sbhntxnphb != ''">sbhntxnphb,</if>
+		<!--坍落度a1 -->
+		<if test="dld_A1 != null ">dld_A1,</if>
+		<!--坍落度a2 -->
+		<if test="dld_A2 != null ">dld_A2,</if>
+		                       <!-- 自动计算生成 -->
+<!--		&lt;!&ndash;坍落度a &ndash;&gt;-->
+<!--		<if test="dld_A != null">dld_A,</if>-->
+		<!--扩展度b1 -->
+		<if test="kzd_B1 != null ">kzd_B1,</if>
+		<!--扩展度b2 -->
+		<if test="kzd_B2 != null ">kzd_B2,</if>
+		                       <!-- 自动生成 -->
+<!--		&lt;!&ndash;扩展度b &ndash;&gt;-->
+<!--		<if test="kzd_B != null">kzd_B,</if>-->
+		<!--砼拌合物_棍度 -->
+		<if test="tbhw_gd != null and tbhw_gd != ''">tbhw_gd,</if>
+		<!--砼拌合物_含沙情况 -->
+		<if test="tbhw_hsqk != null and tbhw_hsqk != ''">tbhw_hsqk,</if>
+		<!--砼拌合物_粘聚性 -->
+		<if test="tbhw_njx != null and tbhw_njx != ''">tbhw_njx,</if>
+		<!--砼拌合物_保水性 -->
+		<if test="tbhw_bsx != null and tbhw_bsx != ''">tbhw_bsx,</if>
+		<!--备注 -->
+		<if test="bz != null and bz != ''">bz,</if>
+		<!--水胶比 -->
+		<if test="sjb_C != null ">sjb_C,</if>
+		<!--筒+砼质量1 -->
+		<if test="t_tzl_D1 != null ">t_tzl_D1,</if>
+		<!--筒+砼质量2 -->
+		<if test="t_tzl_D2 != null ">t_tzl_D2,</if>
+		<!--筒质量1 -->
+		<if test="t_zl_E1 != null ">t_zl_E1,</if>
+		<!--桶质量2 -->
+		<if test="t_zl_E2 != null ">t_zl_E2,</if>
+		<!--砼质量1 -->
+		<if test="t_zl_F1 != null ">t_zl_F1,</if>
+		<!--砼质量2 -->
+		<if test="t_zl_F2 != null ">t_zl_F2,</if>
+		<!--筒容积1 -->
+		<if test="t_rj_G1 != null ">t_rj_G1,</if>
+		<!--筒容积2 -->
+		<if test="t_rj_G2 != null ">t_rj_G2,</if>
+		                       <!-- 自动计算 -->
+<!--		&lt;!&ndash;实测表观密度单值1 &ndash;&gt;-->
+<!--		<if test="scbgmd_dz_H1 != null and scbgmd_dz_H1 != ''">scbgmd_dz_H1,</if>-->
+<!--		&lt;!&ndash;实测表观密度单值2 &ndash;&gt;-->
+<!--		<if test="scbgmd_dz_H2 != null and scbgmd_dz_H2 != ''">scbgmd_dz_H2,</if>-->
+<!--		&lt;!&ndash;实测表观密度平均值 &ndash;&gt;-->
+<!--		<if test="scbgmd_dz_H != null and scbgmd_dz_H != ''">scbgmd_dz_H,</if>-->
+		<!--表观密度计算值 -->
+		<if test="bjmdjsz_p != null ">bjmdjsz_p,</if>
+		<!--配合比较正系数sigma -->
+		<if test="phjjzxs_sigma != null ">phjjzxs_sigma,</if>
+		<!--试板配比1 -->
+		<if test="sbpb_1 != null and sbpb_1 != ''">sbpb_1,</if>
+		<!--试板配比2 -->
+		<if test="sbpb_2 != null and sbpb_2 != ''">sbpb_2,</if>
+		<!--基准水胶比 -->
+		<if test="jjsjb != null ">jjsjb,</if>
+		<!--设计计算方法 -->
+		<if test="sjjsff != null and sjjsff != ''">sjjsff,</if>
+		<!--假定密度 -->
+		<if test="jdmd != null ">jdmd,</if>
+		<!--水胶比1 -->
+		<if test="sjb_I1 != null ">sjb_I1,</if>
+		<!--水胶比2 -->
+		<if test="sjb_I2 != null ">sjb_I2,</if>
+		<!--水泥1 -->
+		<if test="sn_J1 != null ">sn_J1,</if>
+		<!--水泥2 -->
+		<if test="sn_J2 != null ">sn_J2,</if>
+		<!--细集料1 -->
+		<if test="xjl_K1 != null ">xjl_K1,</if>
+		<!--细集料2 -->
+		<if test="xjl_K2 != null ">xjl_K2,</if>
+		<!--粗集料1 -->
+		<if test="cjl_L1 != null ">cjl_L1,</if>
+		<!--粗集料2 -->
+		<if test="cjl_L2 != null ">cjl_L2,</if>
+		<!--水1 -->
+		<if test="s_M1 != null ">s_M1,</if>
+		<!--水2 -->
+		<if test="s_M2 != null ">s_M2,</if>
+		<!--外加剂名称1 -->
+		<if test="wjj_mc1 != null and wjj_mc1 != ''">wjj_mc1,</if>
+		<!--外加剂1质量1 -->
+		<if test="wjjzlmc1_N1 != null ">wjjzlmc1_N1,</if>
+		<!--外加剂1质量2 -->
+		<if test="wjjzlmc1_N2 != null ">wjjzlmc1_N2,</if>
+		<!--外加剂名称2 -->
+		<if test="wjj_mc2 != null and wjj_mc2 != ''">wjj_mc2,</if>
+		<!--外加剂2质量1 -->
+		<if test="wjjzlmc2_O1 != null ">wjjzlmc2_O1,</if>
+		<!--外加剂2质量2 -->
+		<if test="wjjzlmc2_O2 != null ">wjjzlmc2_O2,</if>
+		<!--矿物掺和料名称1 -->
+		<if test="kwchl_mc1 != null and kwchl_mc1 != ''">kwchl_mc1,</if>
+		<!--矿物掺和料名称1质量1 -->
+		<if test="kwchlmc1_P1 != null ">kwchlmc1_P1,</if>
+		<!--矿物掺和料名称1质量2 -->
+		<if test="kwchlmc1_P2 != null ">kwchlmc1_P2,</if>
+		<!--矿物掺和料名称2 -->
+		<if test="kwchl_mc2 != null and kwchl_mc2 != ''">kwchl_mc2,</if>
+		<!--矿物掺和料名称2质量1 -->
+		<if test="kwchlmc2_Q1 != null ">kwchlmc2_Q1,</if>
+		<!--矿物掺和料名称2质量2 -->
+		<if test="kwchlmc2_Q2 != null ">kwchlmc2_Q2,</if>
+		<!--砂率1 -->
+		<if test="sl_R1 != null ">sl_R1,</if>
+		<!--砂率2 -->
+		<if test="sl_R2 != null ">sl_R2,</if>
+		id
+		)values(
+<!--		<if test="jcdwmc != null and jcdwmc != ''">#{jcdwmc},</if>-->
+<!--		<if test="jlbh != null and jlbh != ''">#{jlbh},</if>-->
+<!--		<if test="gcmc != null and gcmc != ''">#{gcmc},</if>-->
+<!--		<if test="htd != null and htd != ''">#{htd},</if>-->
+<!--		<if test="sgdw != null and sgdw != ''">#{sgdw},</if>-->
+<!--		<if test="jldw != null and jldw != ''">#{jldw},</if>-->
+<!--		<if test="gcbwyt != null and gcbwyt != ''">#{gcbwyt},</if>-->
+<!--		<if test="ypxx != null and ypxx != ''">#{ypxx},</if>-->
+<!--		<if test="syjcrq != null ">#{syjcrq},</if>-->
+<!--		<if test="syjcrq != null ">#{syjcrq},</if>-->
+<!--		<if test="syjcrq != null ">#{syjcrq},</if>-->
+<!--		<if test="syjcrq != null ">#{syjcrq},</if>-->
+<!--		<if test="syjcrq != null ">#{syjcrq},</if>-->
+<!--		<if test="syjcrq != null ">#{syjcrq},</if>-->
+		<!--检测单位名称 -->
+		<if test="jcdwmc != null and jcdwmc != ''">#{jcdwmc},</if>
+		<!--记录编号 -->
+		<if test="jlbh != null and jlbh != ''">#{jlbh},</if>
+		<!--工程名称 -->
+		<if test="gcmc != null and gcmc != ''">#{gcmc},</if>
+		<!--合同段 -->
+		<if test="htd != null and htd != ''">#{htd},</if>
+		<!--施工单位 -->
+		<if test="sgdw != null and sgdw != ''">#{sgdw},</if>
+		<!--监理单位 -->
+		<if test="jldw != null and jldw != ''">#{jldw},</if>
+		<!--工程部位/用途 -->
+		<if test="gcbwyt != null and gcbwyt != ''">#{gcbwyt},</if>
+		<!--样品信息 -->
+		<if test="ypxx != null and ypxx != ''">#{ypxx},</if>
+		<!--试验检测日期 -->
+		<if test="syjcrq != null">#{syjcrq},</if>
+		<!--实验条件_温度 -->
+		<if test="sytj_wd != null ">#{sytj_wd},</if>
+		<!--实验条件_湿度 -->
+		<if test="sytj_sd != null ">#{sytj_sd},</if>
+		<!--测试依据 -->
+		<if test="csyj != null and csyj != ''">#{csyj},</if>
+		<!--判定依据 -->
+		<if test="pdyj != null and pdyj != ''">#{pdyj},</if>
+		<!--主要仪器设备名称和编号 -->
+		<if test="zyyjsbmcjbh != null and zyyjsbmcjbh != ''">#{zyyjsbmcjbh},</if>
+		<!--试扮混泥土性能,提出试伴配合比 -->
+		<if test="sbhntxnphb != null and sbhntxnphb != ''">#{sbhntxnphb},</if>
+		<!--坍落度a1 -->
+		<if test="dld_A1 != null ">#{dld_A1},</if>
+		<!--坍落度a2 -->
+		<if test="dld_A2 != null ">#{dld_A2},</if>
+		        <!-- 自动计算 -->
+<!--		&lt;!&ndash;坍落度a &ndash;&gt;-->
+<!--		<if test="dld_A != null and dld_A != ''">#{dld_A},</if>-->
+		<!--扩展度b1 -->
+		<if test="kzd_B1 != null ">#{kzd_B1},</if>
+		<!--扩展度b2 -->
+		<if test="kzd_B2 != null ">#{kzd_B2},</if>
+		<!-- 自动计算 -->
+<!--		&lt;!&ndash;扩展度b &ndash;&gt;-->
+<!--		<if test="kzd_B != null and kzd_B != ''">#{kzd_B},</if>-->
+		<!--砼拌合物_棍度 -->
+		<if test="tbhw_gd != null and tbhw_gd != ''">#{tbhw_gd},</if>
+		<!--砼拌合物_含沙情况 -->
+		<if test="tbhw_hsqk != null and tbhw_hsqk != ''">#{tbhw_hsqk},</if>
+		<!--砼拌合物_粘聚性 -->
+		<if test="tbhw_njx != null and tbhw_njx != ''">#{tbhw_njx},</if>
+		<!--砼拌合物_保水性 -->
+		<if test="tbhw_bsx != null and tbhw_bsx != ''">#{tbhw_bsx},</if>
+		<!--备注 -->
+		<if test="bz != null and bz != ''">#{bz},</if>
+<!--		&lt;!&ndash;砼拌合物_保水性 &ndash;&gt;-->
+<!--		<if test="tbhw_bsx != null and tbhw_bsx != ''">#{tbhw_bsx},</if>-->
+		<!--水胶比 -->
+		<if test="sjb_C != null">#{sjb_C},</if>
+		<!--筒+砼质量1 -->
+		<if test="t_tzl_D1 != null ">#{t_tzl_D1},</if>
+		<!--筒+砼质量2 -->
+		<if test="t_tzl_D2 != null ">#{t_tzl_D2},</if>
+		<!--筒质量1 -->
+		<if test="t_zl_E1 != null ">#{t_zl_E1},</if>
+		<!--桶质量2 -->
+		<if test="t_zl_E2 != null ">#{t_zl_E2},</if>
+		<!--砼质量1 -->
+		<if test="t_zl_F1 != null ">#{t_zl_F1},</if>
+		<!--砼质量2 -->
+		<if test="t_zl_F2 != null ">#{t_zl_F2},</if>
+		<!--筒容积1 -->
+		<if test="t_rj_G1 != null ">#{t_rj_G1},</if>
+		<!--筒容积2 -->
+		<if test="t_rj_G2 != null ">#{t_rj_G2},</if>
+		    <!-- 自动计算 -->
+<!--		&lt;!&ndash;实测表观密度单值1 &ndash;&gt;-->
+<!--		<if test="scbgmd_dz_H1 != null and scbgmd_dz_H1 != ''">#{scbgmd_dz_H1},</if>-->
+<!--		&lt;!&ndash;实测表观密度单值2 &ndash;&gt;-->
+<!--		<if test="scbgmd_dz_H2 != null and scbgmd_dz_H2 != ''">#{scbgmd_dz_H2},</if>-->
+<!--		&lt;!&ndash;实测表观密度平均值 &ndash;&gt;-->
+<!--		<if test="scbgmd_dz_H != null and scbgmd_dz_H != ''">#{scbgmd_dz_H},</if>-->
+		<!--表观密度计算值 -->
+		<if test="bjmdjsz_p != null ">#{bjmdjsz_p},</if>
+		<!--配合比较正系数sigma -->
+		<if test="phjjzxs_sigma != null ">#{phjjzxs_sigma},</if>
+		<!--试板配比1 -->
+		<if test="sbpb_1 != null and sbpb_1 != ''">#{sbpb_1},</if>
+		<!--试板配比2 -->
+		<if test="sbpb_2 != null and sbpb_2 != ''">#{sbpb_2},</if>
+		<!--基准水胶比 -->
+		<if test="jjsjb != null ">#{jjsjb},</if>
+		<!--设计计算方法 -->
+		<if test="sjjsff != null and sjjsff != ''">#{sjjsff},</if>
+		<!--假定密度 -->
+		<if test="jdmd != null ">#{jdmd},</if>
+		<!--水胶比1 -->
+		<if test="sjb_I1 != null ">#{sjb_I1},</if>
+		<!--水胶比2 -->
+		<if test="sjb_I2 != null ">#{sjb_I2},</if>
+		<!--水泥1 -->
+		<if test="sn_J1 != null ">#{sn_J1},</if>
+		<!--水泥2 -->
+		<if test="sn_J2 != null ">#{sn_J2},</if>
+		<!--细集料1 -->
+		<if test="xjl_K1 != null ">#{xjl_K1},</if>
+		<!--细集料2 -->
+		<if test="xjl_K2 != null ">#{xjl_K2},</if>
+		<!--粗集料1 -->
+		<if test="cjl_L1 != null ">#{cjl_L1},</if>
+		<!--粗集料2 -->
+		<if test="cjl_L2 != null ">#{cjl_L2},</if>
+		<!--水1 -->
+		<if test="s_M1 != null ">#{s_M1},</if>
+		<!--水2 -->
+		<if test="s_M2 != null ">#{s_M2},</if>
+		<!--外加剂名称1 -->
+		<if test="wjj_mc1 != null and wjj_mc1 != ''">#{wjj_mc1},</if>
+		<!--外加剂1质量1 -->
+		<if test="wjjzlmc1_N1 != null ">#{wjjzlmc1_N1},</if>
+		<!--外加剂1质量2 -->
+		<if test="wjjzlmc1_N2 != null ">#{wjjzlmc1_N2},</if>
+		<!--外加剂名称2 -->
+		<if test="wjj_mc2 != null and wjj_mc2 != ''">#{wjj_mc2},</if>
+		<!--外加剂2质量1 -->
+		<if test="wjjzlmc2_O1 != null ">#{wjjzlmc2_O1},</if>
+		<!--外加剂2质量2 -->
+		<if test="wjjzlmc2_O2 != null ">#{wjjzlmc2_O2},</if>
+		<!--矿物掺和料名称1 -->
+		<if test="kwchl_mc1 != null and kwchl_mc1 != ''">#{kwchl_mc1},</if>
+		<!--矿物掺和料名称1质量1 -->
+		<if test="kwchlmc1_P1 != null ">#{kwchlmc1_P1},</if>
+		<!--矿物掺和料名称1质量2 -->
+		<if test="kwchlmc1_P2 != null ">#{kwchlmc1_P2},</if>
+		<!--矿物掺和料名称2 -->
+		<if test="kwchl_mc2 != null and kwchl_mc2 != ''">#{kwchl_mc2},</if>
+		<!--矿物掺和料名称2质量1 -->
+		<if test="kwchlmc2_Q1 != null">#{kwchlmc2_Q1},</if>
+		<!--矿物掺和料名称2质量2 -->
+		<if test="kwchlmc2_Q2 != null ">#{kwchlmc2_Q2},</if>
+		<!--砂率1 -->
+		<if test="sl_R1 != null ">#{sl_R1},</if>
+		<!--砂率2 -->
+		<if test="sl_R2 != null ">#{sl_R2},</if>
+		null
+		)
+	</insert>
+
+	<update id="updateCS22Record" parameterType="CS22Record">
+		update cs22Record
+		<set>
+<!--			<if test="jcdwmc != null and jcdwmc != ''">-->
+<!--				jcdwmc = #{jcdwmc},-->
+<!--			</if>-->
+<!--			<if test="jlbh != null and jlbh != ''">-->
+<!--				jlbh = #{jlbh},-->
+<!--			</if>-->
+<!--			<if test="gcmc != null and gcmc != ''">-->
+<!--				gcmc = #{gcmc},-->
+<!--			</if>-->
+<!--			<if test="htd != null and htd != ''">-->
+<!--				htd = #{htd},-->
+<!--			</if>-->
+<!--			<if test="sgdw != null and sgdw != ''">-->
+<!--				sgdw = #{sgdw},-->
+<!--			</if>-->
+<!--			<if test="jldw != null and jldw != ''">-->
+<!--				jldw = #{jldw},-->
+<!--			</if>-->
+<!--			<if test="gcbwyt != null and gcbwyt != ''">-->
+<!--				gcbwyt = #{gcbwyt},-->
+<!--			</if>-->
+<!--			<if test="ypxx != null and ypxx != ''">-->
+<!--				ypxx = #{ypxx},-->
+<!--			</if>-->
+<!--			<if test="syjcrq != null">-->
+<!--				syjcrq = #{syjcrq},-->
+<!--			</if>-->
+			<!--检测单位名称 -->
+				<if test="jcdwmc != null and jcdwmc != ''">jcdwmc=#{jcdwmc},</if>
+				<!--记录编号 -->
+				<if test="jlbh != null and jlbh != ''">jlbh=#{jlbh},</if>
+				<!--工程名称 -->
+				<if test="gcmc != null and gcmc != ''">gcmc=#{gcmc},</if>
+				<!--合同段 -->
+				<if test="htd != null and htd != ''">htd=#{htd},</if>
+				<!--施工单位 -->
+				<if test="sgdw != null and sgdw != ''">sgdw=#{sgdw},</if>
+				<!--监理单位 -->
+				<if test="jldw != null and jldw != ''">jldw=#{jldw},</if>
+				<!--工程部位/用途 -->
+				<if test="gcbwyt != null and gcbwyt != ''">gcbwyt=#{gcbwyt},</if>
+				<!--样品信息 -->
+				<if test="ypxx != null and ypxx != ''">ypxx=#{ypxx},</if>
+				<!--试验检测日期 -->
+				<if test="syjcrq != null">syjcrq=#{syjcrq},</if>
+				<!--实验条件：温度 、湿度 -->
+				<if test="sytj_wd != null and sytj_wd != ''">sytj_wd=#{sytj_wd},</if>
+				<if test="sytj_sd != null and sytj_sd != ''">sytj_sd=#{sytj_sd},</if>
+				<!--测试依据 -->
+				<if test="csyj != null and csyj != ''">csyj=#{csyj},</if>
+				<!--判定依据 -->
+				<if test="pdyj != null and pdyj != ''">pdyj=#{pdyj},</if>
+				<!--主要仪器设备名称和编号 -->
+				<if test="zyyjsbmcjbh != null and zyyjsbmcjbh != ''">zyyjsbmcjbh=#{zyyjsbmcjbh},</if>
+				<!--试扮混泥土性能,提出试伴配合比 -->
+				<if test="sbhntxnphb != null and sbhntxnphb != ''">sbhntxnphb=#{sbhntxnphb},</if>
+				<!--坍落度a1 -->
+				<if test="dld_A1 != null and dld_A1 != ''">dld_A1=#{dld_A1},</if>
+				<!--坍落度a2 -->
+				<if test="dld_A2 != null and dld_A2 != ''">dld_A2=#{dld_A2},</if>
+				<!--坍落度a -->
+				<if test="dld_A != null and dld_A != ''">dld_A=#{dld_A},</if>
+				<!--扩展度b1 -->
+				<if test="kzd_B1 != null and kzd_B1 != ''">kzd_B1=#{kzd_B1},</if>
+				<!--扩展度b2 -->
+				<if test="kzd_B2 != null and kzd_B2 != ''">kzd_B2=#{kzd_B2},</if>
+				<!--扩展度b -->
+				<if test="kzd_B != null and kzd_B != ''">kzd_B=#{kzd_B},</if>
+				<!--砼拌合物_棍度 -->
+				<if test="tbhw_gd != null and tbhw_gd != ''">tbhw_gd=#{tbhw_gd},</if>
+				<!--砼拌合物_含沙情况 -->
+				<if test="tbhw_hsqk != null and tbhw_hsqk != ''">tbhw_hsqk=#{tbhw_hsqk},</if>
+				<!--砼拌合物_粘聚性 -->
+				<if test="tbhw_njx != null and tbhw_njx != ''">tbhw_njx=#{tbhw_njx},</if>
+				<!--砼拌合物_保水性 -->
+				<if test="tbhw_bsx != null and tbhw_bsx != ''">tbhw_bsx=#{tbhw_bsx},</if>
+				<!--备注 -->
+				<if test="bz != null and bz != ''">bz=#{bz},</if>
+<!--				&lt;!&ndash;砼拌合物_保水性 &ndash;&gt;-->
+<!--				<if test="tbhw_bsx != null and tbhw_bsx != ''">tbhw_bsx=#{tbhw_bsx},</if>-->
+				<!--水胶比 -->
+				<if test="sjb_C != null and sjb_C != ''">sjb_C=#{sjb_C},</if>
+				<!--筒+砼质量1 -->
+				<if test="t_tzl_D1 != null and t_tzl_D1 != ''">t_tzl_D1=#{t_tzl_D1},</if>
+				<!--筒+砼质量2 -->
+				<if test="t_tzl_D2 != null and t_tzl_D2 != ''">t_tzl_D2=#{t_tzl_D2},</if>
+				<!--筒质量1 -->
+				<if test="t_zl_E1 != null and t_zl_E1 != ''">t_zl_E1=#{t_zl_E1},</if>
+				<!--桶质量2 -->
+				<if test="t_zl_E2 != null and t_zl_E2 != ''">t_zl_E2=#{t_zl_E2},</if>
+				<!--砼质量1 -->
+				<if test="t_zl_F1 != null and t_zl_F1 != ''">t_zl_F1=#{t_zl_F1},</if>
+				<!--砼质量2 -->
+				<if test="t_zl_F2 != null and t_zl_F2 != ''">t_zl_F2=#{t_zl_F2},</if>
+				<!--筒容积1 -->
+				<if test="t_rj_G1 != null and t_rj_G1 != ''">t_rj_G1=#{t_rj_G1},</if>
+				<!--筒容积2 -->
+				<if test="t_rj_G2 != null and t_rj_G2 != ''">t_rj_G2=#{t_rj_G2},</if>
+				<!--实测表观密度单值1 -->
+				<if test="scbgmd_dz_H1 != null and scbgmd_dz_H1 != ''">scbgmd_dz_H1=#{scbgmd_dz_H1},</if>
+				<!--实测表观密度单值2 -->
+				<if test="scbgmd_dz_H2 != null and scbgmd_dz_H2 != ''">scbgmd_dz_H2=#{scbgmd_dz_H2},</if>
+				<!--实测表观密度平均值 -->
+				<if test="scbgmd_dz_H != null and scbgmd_dz_H != ''">scbgmd_dz_H=#{scbgmd_dz_H},</if>
+				<!--表观密度计算值 -->
+				<if test="bjmdjsz_p != null and bjmdjsz_p != ''">bjmdjsz_p=#{bjmdjsz_p},</if>
+				<!--配合比较正系数sigma -->
+				<if test="phjjzxs_sigma != null and phjjzxs_sigma != ''">phjjzxs_sigma=#{phjjzxs_sigma},</if>
+				<!--试板配比1 -->
+				<if test="sbpb_1 != null and sbpb_1 != ''">sbpb_1=#{sbpb_1},</if>
+				<!--试板配比2 -->
+				<if test="sbpb_2 != null and sbpb_2 != ''">sbpb_2=#{sbpb_2},</if>
+				<!--基准水胶比 -->
+				<if test="jjsjb != null and jjsjb != ''">jjsjb=#{jjsjb},</if>
+				<!--设计计算方法 -->
+				<if test="sjjsff != null and sjjsff != ''">sjjsff=#{sjjsff},</if>
+				<!--假定密度 -->
+				<if test="jdmd != null and jdmd != ''">jdmd=#{jdmd},</if>
+				<!--水胶比1 -->
+				<if test="sjb_I1 != null and sjb_I1 != ''">sjb_I1=#{sjb_I1},</if>
+				<!--水胶比2 -->
+				<if test="sjb_I2 != null and sjb_I2 != ''">sjb_I2=#{sjb_I2},</if>
+				<!--水泥1 -->
+				<if test="sn_J1 != null and sn_J1 != ''">sn_J1=#{sn_J1},</if>
+				<!--水泥2 -->
+				<if test="sn_J2 != null and sn_J2 != ''">sn_J2=#{sn_J2},</if>
+				<!--细集料1 -->
+				<if test="xjl_K1 != null and xjl_K1 != ''">xjl_K1=#{xjl_K1},</if>
+				<!--细集料2 -->
+				<if test="xjl_K2 != null and xjl_K2 != ''">xjl_K2=#{xjl_K2},</if>
+				<!--粗集料1 -->
+				<if test="cjl_L1 != null and cjl_L1 != ''">cjl_L1=#{cjl_L1},</if>
+				<!--粗集料2 -->
+				<if test="cjl_L2 != null and cjl_L2 != ''">cjl_L2=#{cjl_L2},</if>
+				<!--水1 -->
+				<if test="s_M1 != null and s_M1 != ''">s_M1=#{s_M1},</if>
+				<!--水2 -->
+				<if test="s_M2 != null and s_M2 != ''">s_M2=#{s_M2},</if>
+				<!--外加剂名称1 -->
+				<if test="wjj_mc1 != null and wjj_mc1 != ''">wjj_mc1=#{wjj_mc1},</if>
+				<!--外加剂1质量1 -->
+				<if test="wjjzlmc1_N1 != null and wjjzlmc1_N1 != ''">wjjzlmc1_N1=#{wjjzlmc1_N1},</if>
+				<!--外加剂1质量2 -->
+				<if test="wjjzlmc1_N2 != null and wjjzlmc1_N2 != ''">wjjzlmc1_N2=#{wjjzlmc1_N2},</if>
+				<!--外加剂名称2 -->
+				<if test="wjj_mc2 != null and wjj_mc2 != ''">wjj_mc2=#{wjj_mc2},</if>
+				<!--外加剂2质量1 -->
+				<if test="wjjzlmc2_O1 != null and wjjzlmc2_O1 != ''">wjjzlmc2_O1=#{wjjzlmc2_O1},</if>
+				<!--外加剂2质量2 -->
+				<if test="wjjzlmc2_O2 != null and wjjzlmc2_O2 != ''">wjjzlmc2_O2=#{wjjzlmc2_O2},</if>
+				<!--矿物掺和料名称1 -->
+				<if test="kwchl_mc1 != null and kwchl_mc1 != ''">kwchl_mc1=#{kwchl_mc1},</if>
+				<!--矿物掺和料名称1质量1 -->
+				<if test="kwchlmc1_P1 != null and kwchlmc1_P1 != ''">kwchlmc1_P1=#{kwchlmc1_P1},</if>
+				<!--矿物掺和料名称1质量2 -->
+				<if test="kwchlmc1_P2 != null and kwchlmc1_P2 != ''">kwchlmc1_P2=#{kwchlmc1_P2},</if>
+				<!--矿物掺和料名称2 -->
+				<if test="kwchl_mc2 != null and kwchl_mc2 != ''">kwchl_mc2=#{kwchl_mc2},</if>
+				<!--矿物掺和料名称2质量1 -->
+				<if test="kwchlmc2_Q1 != null and kwchlmc2_Q1 != ''">kwchlmc2_Q1=#{kwchlmc2_Q1},</if>
+				<!--矿物掺和料名称2质量2 -->
+				<if test="kwchlmc2_Q2 != null and kwchlmc2_Q2 != ''">kwchlmc2_Q2=#{kwchlmc2_Q2},</if>
+				<!--砂率1 -->
+				<if test="sl_R1 != null and sl_R1 != ''">sl_R1=#{sl_R1},</if>
+		</set>
+		where id = #{id}
+	</update>
+
+	<delete id="deleteCS22RecordById" parameterType="Long">
+		delete from cs22Record where id = #{id}
+	</delete>
+
+	<delete id="deleteCS22RecordByIds" parameterType="Long">
+		delete from cs22Record where id in
+		<foreach collection="array" item="id"
+				 open="(" separator="," close=")">
+			#{id}
+		</foreach>
+	</delete>
+
+</mapper> 
